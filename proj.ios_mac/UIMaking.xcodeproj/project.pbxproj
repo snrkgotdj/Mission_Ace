@@ -15,6 +15,10 @@
 		132278D321D09E100047B6B8 /* Layer_Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278D021D09E100047B6B8 /* Layer_Base.cpp */; };
 		132278D821D0B1610047B6B8 /* Pannel.png in Resources */ = {isa = PBXBuildFile; fileRef = 132278D721D0B1610047B6B8 /* Pannel.png */; };
 		132278D921D0B1610047B6B8 /* Pannel.png in Resources */ = {isa = PBXBuildFile; fileRef = 132278D721D0B1610047B6B8 /* Pannel.png */; };
+		132278E821D0D3420047B6B8 /* Page_0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278E621D0D3410047B6B8 /* Page_0.cpp */; };
+		132278E921D0D3420047B6B8 /* Page_0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278E621D0D3410047B6B8 /* Page_0.cpp */; };
+		132278EB21D0D83C0047B6B8 /* Quest.png in Resources */ = {isa = PBXBuildFile; fileRef = 132278EA21D0D83C0047B6B8 /* Quest.png */; };
+		132278EC21D0D83C0047B6B8 /* Quest.png in Resources */ = {isa = PBXBuildFile; fileRef = 132278EA21D0D83C0047B6B8 /* Quest.png */; };
 		13285C2521CB5588005B8214 /* Neco_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13285C2421CB5588005B8214 /* Neco_1.jpg */; };
 		13285C2621CB5588005B8214 /* Neco_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13285C2421CB5588005B8214 /* Neco_1.jpg */; };
 		13285C2821CB5621005B8214 /* Neco_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13285C2721CB5621005B8214 /* Neco_2.jpg */; };
@@ -125,6 +129,9 @@
 		132278D021D09E100047B6B8 /* Layer_Base.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Layer_Base.cpp; sourceTree = "<group>"; };
 		132278D121D09E100047B6B8 /* Layer_Base.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Layer_Base.hpp; sourceTree = "<group>"; };
 		132278D721D0B1610047B6B8 /* Pannel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pannel.png; sourceTree = "<group>"; };
+		132278E621D0D3410047B6B8 /* Page_0.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Page_0.cpp; sourceTree = "<group>"; };
+		132278E721D0D3410047B6B8 /* Page_0.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Page_0.hpp; sourceTree = "<group>"; };
+		132278EA21D0D83C0047B6B8 /* Quest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quest.png; sourceTree = "<group>"; };
 		13285C2421CB5588005B8214 /* Neco_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neco_1.jpg; sourceTree = "<group>"; };
 		13285C2721CB5621005B8214 /* Neco_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neco_2.jpg; sourceTree = "<group>"; };
 		13285C2A21CB573A005B8214 /* Neco_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neco_3.jpg; sourceTree = "<group>"; };
@@ -246,6 +253,8 @@
 				132278DA21D0CB810047B6B8 /* Button */,
 				132278CA21D0732D0047B6B8 /* Page.cpp */,
 				132278C921D0732D0047B6B8 /* Page.hpp */,
+				132278E621D0D3410047B6B8 /* Page_0.cpp */,
+				132278E721D0D3410047B6B8 /* Page_0.hpp */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -358,6 +367,7 @@
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
 				132278D721D0B1610047B6B8 /* Pannel.png */,
+				132278EA21D0D83C0047B6B8 /* Quest.png */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -498,6 +508,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				132278EB21D0D83C0047B6B8 /* Quest.png in Resources */,
 				13285C2B21CB573A005B8214 /* Neco_3.jpg in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
@@ -531,6 +542,7 @@
 				13285C2621CB5588005B8214 /* Neco_1.jpg in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				132278D921D0B1610047B6B8 /* Pannel.png in Resources */,
+				132278EC21D0D83C0047B6B8 /* Quest.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +559,7 @@
 				1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				132278E821D0D3420047B6B8 /* Page_0.cpp in Sources */,
 				1AF87B8A1F6F7822007BE51C /* main.m in Sources */,
 				1356EAED21CA404500746E03 /* Layer_Main.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* SelectScene.cpp in Sources */,
@@ -566,6 +579,7 @@
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				132278D321D09E100047B6B8 /* Layer_Base.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* SelectScene.cpp in Sources */,
+				132278E921D0D3420047B6B8 /* Page_0.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -134,7 +134,7 @@ bool CLayer_Select::Touched(Event* _event)
         rect.origin.x += getPositionX();
         if(rect.containsPoint(Vec2(pMouse->getCursorX(), pMouse->getCursorY())))
         {
-            CCLOG("Select Touch %d", pSprite->getTag());
+            m_pLayer_Main->changeCulSel(pSprite->getTag());
             return true;
         }
     }

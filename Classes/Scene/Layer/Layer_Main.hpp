@@ -39,6 +39,7 @@ private:
     
    
 public:
+    void changeCulSel(int _iCulSel);
     void setScene(CSelectScene* _pScene) {m_pScene = _pScene;}
     void setSelectLayer(CLayer_Select* _pSelectLayer){m_pSelectLayer = _pSelectLayer;}
     bool addPage(CPage* _pPage);
@@ -49,8 +50,10 @@ public:
 public:
     Vec2 getNextPagePos() const;
     const Vec2& getCenterPos() const {return m_vCenterPos;}
+    const Size& getVisibleSize() const {return m_tVisibleSize;}
     const int getPagePad() const {return m_iPagePad;}
     const int getCurPageTag() const {return m_iCurPageTag;}
+    
     
 private:
     int addPageTag();

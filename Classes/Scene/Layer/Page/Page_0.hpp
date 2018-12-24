@@ -8,18 +8,18 @@
 #ifndef Page_0_hpp
 #define Page_0_hpp
 
-//#include <stdio.h>
-//#include "Page.hpp"
-//
-//using namespace cocos2d;
-//
-//class CPage_0 : public CPage
-//{
-//public:
-//    virtual bool init(const char* _ImageName, CLayer_Main* _MainLayer);
-//
-//private:
-//    CPage_0();
-//    ~CPage_0();
-//};
+#include <stdio.h>
+#include "Page.hpp"
+
+using namespace cocos2d;
+
+class CPage_0 : public CPage
+{
+public:
+    virtual bool init(const char* _ImageName, CLayer_Main* _MainLayer);
+    static CPage_0* create(const char* _ImageName, CLayer_Main* _MainLayer);
+private:
+    CPage_0();
+    ~CPage_0();
+};
 #endif /* Page_0_hpp */

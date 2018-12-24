@@ -8,7 +8,7 @@
 #include "Layer_Main.hpp"
 #include "Layer_Select.hpp"
 #include "Page.hpp"
-
+#include "Page_0.hpp"
 
 
 using namespace cocos2d;
@@ -57,7 +57,7 @@ bool CLayer_Main::init(Scene* _pScene)
 
 void CLayer_Main::createPage()
 {
-    this->addPage(CPage::create("Neco_Main.jpeg", this));
+    this->addPage(CPage_0::create("Neco_Main.jpeg", this));
     this->addPage(CPage::create("Neco_1.jpg", this));
     this->addPage(CPage::create("Neco_2.jpg", this));
     this->addPage(CPage::create("Neco_3.jpg", this));
@@ -92,7 +92,7 @@ void CLayer_Main::OnMouseUp(Event* _event)
     
     m_bMouseOn = false;
     ActionInterval* action = nullptr;
-    
+    stopAllActions();
     int iBeforeTag = m_iCurPageTag;
     float fPosX = this->getPositionX();
     float fSize = m_tVisibleSize.width * 0.5;
@@ -111,6 +111,21 @@ void CLayer_Main::OnMouseUp(Event* _event)
             --m_iCurPageTag;
         }
     }
+    
+    action = EaseOut::create(MoveTo::create(m_fPageChangeTime, Vec2(-m_iCurPageTag * (m_tVisibleSize.width + m_iPagePad), 0)), 7);
+    
+    this->runAction(action);
+    
+    m_pSelectLayer->changeCulSel(iBeforeTag, m_iCurPageTag);
+}
+
+void CLayer_Main::changeCulSel(int _iCulSel)
+{
+    ActionInterval* action = nullptr;
+    stopAllActions();
+    int iBeforeTag = m_iCurPageTag;
+    
+    m_iCurPageTag = _iCulSel;
     
     action = EaseOut::create(MoveTo::create(m_fPageChangeTime, Vec2(-m_iCurPageTag * (m_tVisibleSize.width + m_iPagePad), 0)), 7);
     

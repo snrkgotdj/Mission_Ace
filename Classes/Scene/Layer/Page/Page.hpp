@@ -16,7 +16,7 @@ using namespace cocos2d;
 
 class CPage : public Layer
 {
-private:
+protected:
     CLayer_Main* m_pLayer_Main;
     const char* m_pBGName;
     
@@ -28,7 +28,7 @@ public:
     virtual bool init(const char* _ImageName, CLayer_Main* _MainLayer);
     static CPage* create(const char* _ImageName, CLayer_Main* _MainLayer);
     
-private:
+protected:
     CPage();
     ~CPage();
 };
