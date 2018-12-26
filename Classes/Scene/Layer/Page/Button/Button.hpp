@@ -14,11 +14,10 @@ using namespace cocos2d;
 
 class CButton : public Sprite
 {
-    
-    
 public:
     virtual bool init();
-    CREATE_FUNC(CButton);
+    static CButton* create(const char* _strSprite);
+
     
 private:
     CButton();

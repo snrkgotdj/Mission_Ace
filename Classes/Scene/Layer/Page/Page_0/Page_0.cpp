@@ -7,10 +7,13 @@
 
 #include "Page_0.hpp"
 #include "Layer_Main.hpp"
+#include "Profile.hpp"
+
 
 using namespace cocos2d;
 
 CPage_0::CPage_0()
+    :m_pProfile(nullptr)
 {
     
 }
@@ -25,14 +28,9 @@ bool CPage_0::init(const char* _ImageName, CLayer_Main* _MainLayer)
     if(!CPage::init(_ImageName, _MainLayer))
         return false;
     
-    const Size& vSize = m_pLayer_Main->getVisibleSize();
+    m_pProfile = CProfile::create();
     
-    Sprite* sprite = Sprite::create("Quest.png");
-    sprite->setContentSize(Size(vSize.width * 0.3, 100));
-    sprite->setPosition(Size(vSize.width * 0.3, vSize.height * 0.8));
-    this->addChild(sprite);
-    
-    
+    this->addChild(m_pProfile);
     
     return true;
 }

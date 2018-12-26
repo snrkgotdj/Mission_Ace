@@ -9,14 +9,17 @@
 #include "Layer_Select.hpp"
 #include "Page.hpp"
 #include "Page_0.hpp"
-
+#include "Page_2.hpp"
 
 using namespace cocos2d;
 
 CLayer_Main::CLayer_Main()
     : m_pScene(nullptr)
     , m_pSelectLayer(nullptr)
+    , m_pVerticalPage(nullptr)
     , m_bMouseOn(false)
+    , m_bMouseCheckOnce(false)
+    , m_bCheckVertical(false)
     , m_vOldMousePos(Vec2(0.f, 0.f))
     , m_vFirstMousePos(Vec2(0.f, 0.f))
     , m_iPagePad(50)
@@ -26,7 +29,7 @@ CLayer_Main::CLayer_Main()
     , m_iCountPageTag(0)
     , m_fPageChangeTime(1.3f)
 {
-    
+    m_vecPage.reserve(5);
 }
 
 CLayer_Main::~CLayer_Main()
@@ -60,7 +63,7 @@ void CLayer_Main::createPage()
     this->addPage(CPage_0::create("Neco_Main.jpeg", this));
     this->addPage(CPage::create("Neco_1.jpg", this));
     this->addPage(CPage::create("Neco_2.jpg", this));
-    this->addPage(CPage::create("Neco_3.jpg", this));
+    this->addPage(CPage_2::create("Neco_3.jpg", this));
     this->addPage(CPage::create("Neco_4.jpg", this));
 }
 
@@ -69,6 +72,7 @@ bool CLayer_Main::Touched(Event* _event)
     m_bMouseOn = true;
     EventMouse* Mouse = (EventMouse*)_event;
     m_vOldMousePos.x = Mouse->getCursorX();
+    m_vOldMousePos.y = Mouse->getCursorY();
     m_vFirstMousePos = Vec2(Mouse->getCursorX(), Mouse->getCursorY());
     return true;
 }
@@ -80,9 +84,37 @@ void CLayer_Main::OnMouseMove(Event* _event)
     
     EventMouse* Mouse = (EventMouse*)_event;
     Vec2 vMousePos = Vec2(Mouse->getCursorX(), Mouse->getCursorY());
-    float fDiff = vMousePos.x - m_vOldMousePos.x;
-    this->setPositionX(this->getPositionX() + fDiff);
+    Vec2 vDiff = vMousePos - m_vOldMousePos;
+    
+    //최초 한번 마우스 체크
+    if(false == m_bMouseCheckOnce)
+    {
+        m_bMouseCheckOnce = true;
+        m_bCheckVertical = false;
+        if(abs(vDiff.x) < abs(vDiff.y))
+        {
+            for(int i = 0; i < m_vecPage.size(); ++i)
+            {
+                if(m_vecPage.at(i)->checkVertical(vMousePos))
+                {
+                    m_bCheckVertical = true;
+                    break;
+                }
+            }
+        }
+    }
+    
+    if(m_bCheckVertical)
+    {
+        m_pVerticalPage->VerticalMove(vDiff);//세로일경우 체크
+    }
+    else
+    {
+        this->setPositionX(this->getPositionX() + vDiff.x);//가로일경우 체크
+    }
+    
     m_vOldMousePos = vMousePos;
+
 }
 
 void CLayer_Main::OnMouseUp(Event* _event)
@@ -91,6 +123,13 @@ void CLayer_Main::OnMouseUp(Event* _event)
         return;
     
     m_bMouseOn = false;
+    m_bMouseCheckOnce = false;
+    
+    if(m_bCheckVertical)
+    {
+        m_pVerticalPage->VerticalMoveUp();
+    }
+    
     ActionInterval* action = nullptr;
     stopAllActions();
     int iBeforeTag = m_iCurPageTag;
@@ -187,6 +226,7 @@ bool CLayer_Main::addPage(CPage *_pPage)
     _pPage->setPosition(getNextPagePos());
     this->addChild(_pPage);
     _pPage->setTag(addPageTag());
+    m_vecPage.pushBack(_pPage);
     
     return true;
 }

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		132278AA21D0699B0047B6B8 /* MyMouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278A821D0699B0047B6B8 /* MyMouse.cpp */; };
-		132278AB21D0699B0047B6B8 /* MyMouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278A821D0699B0047B6B8 /* MyMouse.cpp */; };
 		132278CB21D0732E0047B6B8 /* Page.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278CA21D0732D0047B6B8 /* Page.cpp */; };
 		132278CC21D0732E0047B6B8 /* Page.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278CA21D0732D0047B6B8 /* Page.cpp */; };
 		132278D221D09E100047B6B8 /* Layer_Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278D021D09E100047B6B8 /* Layer_Base.cpp */; };
@@ -17,8 +15,8 @@
 		132278D921D0B1610047B6B8 /* Pannel.png in Resources */ = {isa = PBXBuildFile; fileRef = 132278D721D0B1610047B6B8 /* Pannel.png */; };
 		132278E821D0D3420047B6B8 /* Page_0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278E621D0D3410047B6B8 /* Page_0.cpp */; };
 		132278E921D0D3420047B6B8 /* Page_0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278E621D0D3410047B6B8 /* Page_0.cpp */; };
-		132278EB21D0D83C0047B6B8 /* Quest.png in Resources */ = {isa = PBXBuildFile; fileRef = 132278EA21D0D83C0047B6B8 /* Quest.png */; };
-		132278EC21D0D83C0047B6B8 /* Quest.png in Resources */ = {isa = PBXBuildFile; fileRef = 132278EA21D0D83C0047B6B8 /* Quest.png */; };
+		132278F121D0DBC50047B6B8 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278F021D0DBC50047B6B8 /* Button.cpp */; };
+		132278F221D0DBC50047B6B8 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132278F021D0DBC50047B6B8 /* Button.cpp */; };
 		13285C2521CB5588005B8214 /* Neco_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13285C2421CB5588005B8214 /* Neco_1.jpg */; };
 		13285C2621CB5588005B8214 /* Neco_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13285C2421CB5588005B8214 /* Neco_1.jpg */; };
 		13285C2821CB5621005B8214 /* Neco_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13285C2721CB5621005B8214 /* Neco_2.jpg */; };
@@ -29,6 +27,28 @@
 		13285C2F21CB573F005B8214 /* Neco_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13285C2D21CB573F005B8214 /* Neco_4.jpg */; };
 		13285C3221CB57FE005B8214 /* Layer_Select.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13285C3021CB57FE005B8214 /* Layer_Select.cpp */; };
 		13285C3321CB57FE005B8214 /* Layer_Select.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13285C3021CB57FE005B8214 /* Layer_Select.cpp */; };
+		13323F3021D305E90062BA01 /* Profile_Mid.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F2F21D305E90062BA01 /* Profile_Mid.png */; };
+		13323F3121D305E90062BA01 /* Profile_Mid.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F2F21D305E90062BA01 /* Profile_Mid.png */; };
+		13323F3321D306420062BA01 /* Profile_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F3221D306420062BA01 /* Profile_Button.png */; };
+		13323F3421D306420062BA01 /* Profile_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F3221D306420062BA01 /* Profile_Button.png */; };
+		13323F3621D306470062BA01 /* Profile_Setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F3521D306460062BA01 /* Profile_Setting.png */; };
+		13323F3721D306470062BA01 /* Profile_Setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F3521D306460062BA01 /* Profile_Setting.png */; };
+		13323F3A21D306C80062BA01 /* Profile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F3821D306C80062BA01 /* Profile.cpp */; };
+		13323F3B21D306C80062BA01 /* Profile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F3821D306C80062BA01 /* Profile.cpp */; };
+		13323F3F21D3153B0062BA01 /* ItemBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F3D21D3153B0062BA01 /* ItemBox.cpp */; };
+		13323F4021D3153B0062BA01 /* ItemBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F3D21D3153B0062BA01 /* ItemBox.cpp */; };
+		13323F4221D317750062BA01 /* ItemBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F4121D317750062BA01 /* ItemBox.png */; };
+		13323F4321D317750062BA01 /* ItemBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F4121D317750062BA01 /* ItemBox.png */; };
+		13323F4821D31F780062BA01 /* Page_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F4621D31F780062BA01 /* Page_2.cpp */; };
+		13323F4921D31F780062BA01 /* Page_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F4621D31F780062BA01 /* Page_2.cpp */; };
+		13323F4D21D322A90062BA01 /* EventGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F4B21D322A90062BA01 /* EventGroup.cpp */; };
+		13323F4E21D322A90062BA01 /* EventGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F4B21D322A90062BA01 /* EventGroup.cpp */; };
+		13323F5021D324D30062BA01 /* EventGroup.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F4F21D324D20062BA01 /* EventGroup.png */; };
+		13323F5121D324D30062BA01 /* EventGroup.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F4F21D324D20062BA01 /* EventGroup.png */; };
+		13323F5621D33F9D0062BA01 /* EventItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F5521D33F9D0062BA01 /* EventItem.png */; };
+		13323F5721D33F9D0062BA01 /* EventItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F5521D33F9D0062BA01 /* EventItem.png */; };
+		13323F5A21D3786E0062BA01 /* VerticalLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F5821D3786E0062BA01 /* VerticalLayer.cpp */; };
+		13323F5B21D3786E0062BA01 /* VerticalLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F5821D3786E0062BA01 /* VerticalLayer.cpp */; };
 		1356EAE921CA3E0600746E03 /* Neco_Main.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1356EAE821CA3E0600746E03 /* Neco_Main.jpeg */; };
 		1356EAEA21CA3E0600746E03 /* Neco_Main.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1356EAE821CA3E0600746E03 /* Neco_Main.jpeg */; };
 		1356EAED21CA404500746E03 /* Layer_Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1356EAEB21CA404500746E03 /* Layer_Main.cpp */; };
@@ -122,8 +142,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		132278A821D0699B0047B6B8 /* MyMouse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyMouse.cpp; sourceTree = "<group>"; };
-		132278A921D0699B0047B6B8 /* MyMouse.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MyMouse.hpp; sourceTree = "<group>"; };
 		132278C921D0732D0047B6B8 /* Page.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Page.hpp; sourceTree = "<group>"; };
 		132278CA21D0732D0047B6B8 /* Page.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Page.cpp; sourceTree = "<group>"; };
 		132278D021D09E100047B6B8 /* Layer_Base.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Layer_Base.cpp; sourceTree = "<group>"; };
@@ -131,13 +149,30 @@
 		132278D721D0B1610047B6B8 /* Pannel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pannel.png; sourceTree = "<group>"; };
 		132278E621D0D3410047B6B8 /* Page_0.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Page_0.cpp; sourceTree = "<group>"; };
 		132278E721D0D3410047B6B8 /* Page_0.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Page_0.hpp; sourceTree = "<group>"; };
-		132278EA21D0D83C0047B6B8 /* Quest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quest.png; sourceTree = "<group>"; };
+		132278EE21D0DBC50047B6B8 /* Button.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Button.hpp; sourceTree = "<group>"; };
+		132278F021D0DBC50047B6B8 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
 		13285C2421CB5588005B8214 /* Neco_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neco_1.jpg; sourceTree = "<group>"; };
 		13285C2721CB5621005B8214 /* Neco_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neco_2.jpg; sourceTree = "<group>"; };
 		13285C2A21CB573A005B8214 /* Neco_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neco_3.jpg; sourceTree = "<group>"; };
 		13285C2D21CB573F005B8214 /* Neco_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neco_4.jpg; sourceTree = "<group>"; };
 		13285C3021CB57FE005B8214 /* Layer_Select.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Layer_Select.cpp; sourceTree = "<group>"; };
 		13285C3121CB57FE005B8214 /* Layer_Select.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Layer_Select.hpp; sourceTree = "<group>"; };
+		13323F2F21D305E90062BA01 /* Profile_Mid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Profile_Mid.png; path = ../../../YourGame/Resources/Profile_Mid.png; sourceTree = "<group>"; };
+		13323F3221D306420062BA01 /* Profile_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Profile_Button.png; path = ../../../YourGame/Resources/Profile_Button.png; sourceTree = "<group>"; };
+		13323F3521D306460062BA01 /* Profile_Setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Profile_Setting.png; path = ../../../YourGame/Resources/Profile_Setting.png; sourceTree = "<group>"; };
+		13323F3821D306C80062BA01 /* Profile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Profile.cpp; sourceTree = "<group>"; };
+		13323F3921D306C80062BA01 /* Profile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Profile.hpp; sourceTree = "<group>"; };
+		13323F3D21D3153B0062BA01 /* ItemBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ItemBox.cpp; sourceTree = "<group>"; };
+		13323F3E21D3153B0062BA01 /* ItemBox.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ItemBox.hpp; sourceTree = "<group>"; };
+		13323F4121D317750062BA01 /* ItemBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ItemBox.png; path = ../../../YourGame/Resources/ItemBox.png; sourceTree = "<group>"; };
+		13323F4621D31F780062BA01 /* Page_2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Page_2.cpp; sourceTree = "<group>"; };
+		13323F4721D31F780062BA01 /* Page_2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Page_2.hpp; sourceTree = "<group>"; };
+		13323F4B21D322A90062BA01 /* EventGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EventGroup.cpp; sourceTree = "<group>"; };
+		13323F4C21D322A90062BA01 /* EventGroup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EventGroup.hpp; sourceTree = "<group>"; };
+		13323F4F21D324D20062BA01 /* EventGroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EventGroup.png; sourceTree = "<group>"; };
+		13323F5521D33F9D0062BA01 /* EventItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EventItem.png; path = ../EventItem.png; sourceTree = "<group>"; };
+		13323F5821D3786E0062BA01 /* VerticalLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalLayer.cpp; path = ../VerticalLayer.cpp; sourceTree = "<group>"; };
+		13323F5921D3786E0062BA01 /* VerticalLayer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = VerticalLayer.hpp; path = ../VerticalLayer.hpp; sourceTree = "<group>"; };
 		1356EAE821CA3E0600746E03 /* Neco_Main.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neco_Main.jpeg; sourceTree = "<group>"; };
 		1356EAEB21CA404500746E03 /* Layer_Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Layer_Main.cpp; sourceTree = "<group>"; };
 		1356EAEC21CA404500746E03 /* Layer_Main.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Layer_Main.hpp; sourceTree = "<group>"; };
@@ -250,11 +285,11 @@
 		132278CE21D082A90047B6B8 /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				13323F3C21D315100062BA01 /* Page_0 */,
+				13323F4521D31F260062BA01 /* Page_2 */,
 				132278DA21D0CB810047B6B8 /* Button */,
 				132278CA21D0732D0047B6B8 /* Page.cpp */,
 				132278C921D0732D0047B6B8 /* Page.hpp */,
-				132278E621D0D3410047B6B8 /* Page_0.cpp */,
-				132278E721D0D3410047B6B8 /* Page_0.hpp */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -272,8 +307,76 @@
 		132278DA21D0CB810047B6B8 /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				132278F021D0DBC50047B6B8 /* Button.cpp */,
+				132278EE21D0DBC50047B6B8 /* Button.hpp */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		13323F2A21D304C90062BA01 /* Page_00 */ = {
+			isa = PBXGroup;
+			children = (
+				13323F4121D317750062BA01 /* ItemBox.png */,
+				13323F3521D306460062BA01 /* Profile_Setting.png */,
+				13323F3221D306420062BA01 /* Profile_Button.png */,
+				13323F2F21D305E90062BA01 /* Profile_Mid.png */,
+			);
+			path = Page_00;
+			sourceTree = "<group>";
+		};
+		13323F2E21D305610062BA01 /* BackGround */ = {
+			isa = PBXGroup;
+			children = (
+				1356EAE821CA3E0600746E03 /* Neco_Main.jpeg */,
+				13285C2421CB5588005B8214 /* Neco_1.jpg */,
+				13285C2721CB5621005B8214 /* Neco_2.jpg */,
+				13285C2A21CB573A005B8214 /* Neco_3.jpg */,
+				13285C2D21CB573F005B8214 /* Neco_4.jpg */,
+			);
+			path = BackGround;
+			sourceTree = "<group>";
+		};
+		13323F3C21D315100062BA01 /* Page_0 */ = {
+			isa = PBXGroup;
+			children = (
+				132278E621D0D3410047B6B8 /* Page_0.cpp */,
+				132278E721D0D3410047B6B8 /* Page_0.hpp */,
+				13323F3821D306C80062BA01 /* Profile.cpp */,
+				13323F3921D306C80062BA01 /* Profile.hpp */,
+				13323F3D21D3153B0062BA01 /* ItemBox.cpp */,
+				13323F3E21D3153B0062BA01 /* ItemBox.hpp */,
+			);
+			path = Page_0;
+			sourceTree = "<group>";
+		};
+		13323F4421D31E3E0062BA01 /* Page_02 */ = {
+			isa = PBXGroup;
+			children = (
+				13323F5521D33F9D0062BA01 /* EventItem.png */,
+				13323F4F21D324D20062BA01 /* EventGroup.png */,
+			);
+			path = Page_02;
+			sourceTree = "<group>";
+		};
+		13323F4521D31F260062BA01 /* Page_2 */ = {
+			isa = PBXGroup;
+			children = (
+				13323F4A21D322300062BA01 /* EventGroup */,
+				13323F4621D31F780062BA01 /* Page_2.cpp */,
+				13323F4721D31F780062BA01 /* Page_2.hpp */,
+				13323F5821D3786E0062BA01 /* VerticalLayer.cpp */,
+				13323F5921D3786E0062BA01 /* VerticalLayer.hpp */,
+			);
+			path = Page_2;
+			sourceTree = "<group>";
+		};
+		13323F4A21D322300062BA01 /* EventGroup */ = {
+			isa = PBXGroup;
+			children = (
+				13323F4B21D322A90062BA01 /* EventGroup.cpp */,
+				13323F4C21D322A90062BA01 /* EventGroup.hpp */,
+			);
+			path = EventGroup;
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -356,18 +459,15 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				13323F2A21D304C90062BA01 /* Page_00 */,
+				13323F4421D31E3E0062BA01 /* Page_02 */,
+				13323F2E21D305610062BA01 /* BackGround */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
-				1356EAE821CA3E0600746E03 /* Neco_Main.jpeg */,
-				13285C2421CB5588005B8214 /* Neco_1.jpg */,
-				13285C2721CB5621005B8214 /* Neco_2.jpg */,
-				13285C2A21CB573A005B8214 /* Neco_3.jpg */,
-				13285C2D21CB573F005B8214 /* Neco_4.jpg */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
 				132278D721D0B1610047B6B8 /* Pannel.png */,
-				132278EA21D0D83C0047B6B8 /* Quest.png */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -379,8 +479,6 @@
 				132278CF21D082B40047B6B8 /* Scene */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				132278A821D0699B0047B6B8 /* MyMouse.cpp */,
-				132278A921D0699B0047B6B8 /* MyMouse.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -508,18 +606,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				132278EB21D0D83C0047B6B8 /* Quest.png in Resources */,
 				13285C2B21CB573A005B8214 /* Neco_3.jpg in Resources */,
+				13323F3321D306420062BA01 /* Profile_Button.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
 				13285C2E21CB573F005B8214 /* Neco_4.jpg in Resources */,
+				13323F3621D306470062BA01 /* Profile_Setting.png in Resources */,
+				13323F4221D317750062BA01 /* ItemBox.png in Resources */,
 				13285C2821CB5621005B8214 /* Neco_2.jpg in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				13323F5621D33F9D0062BA01 /* EventItem.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				13285C2521CB5588005B8214 /* Neco_1.jpg in Resources */,
+				13323F5021D324D30062BA01 /* EventGroup.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				132278D821D0B1610047B6B8 /* Pannel.png in Resources */,
 				1356EAE921CA3E0600746E03 /* Neco_Main.jpeg in Resources */,
+				13323F3021D305E90062BA01 /* Profile_Mid.png in Resources */,
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
@@ -531,18 +634,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
+				13323F3121D305E90062BA01 /* Profile_Mid.png in Resources */,
 				13285C2921CB5621005B8214 /* Neco_2.jpg in Resources */,
+				13323F5121D324D30062BA01 /* EventGroup.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				13285C2F21CB573F005B8214 /* Neco_4.jpg in Resources */,
 				1356EAEA21CA3E0600746E03 /* Neco_Main.jpeg in Resources */,
+				13323F4321D317750062BA01 /* ItemBox.png in Resources */,
 				13285C2C21CB573A005B8214 /* Neco_3.jpg in Resources */,
+				13323F3421D306420062BA01 /* Profile_Button.png in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
+				13323F5721D33F9D0062BA01 /* EventItem.png in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				13285C2621CB5588005B8214 /* Neco_1.jpg in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				13323F3721D306470062BA01 /* Profile_Setting.png in Resources */,
 				132278D921D0B1610047B6B8 /* Pannel.png in Resources */,
-				132278EC21D0D83C0047B6B8 /* Quest.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,16 +662,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				132278CB21D0732E0047B6B8 /* Page.cpp in Sources */,
-				132278AA21D0699B0047B6B8 /* MyMouse.cpp in Sources */,
+				13323F4D21D322A90062BA01 /* EventGroup.cpp in Sources */,
 				132278D221D09E100047B6B8 /* Layer_Base.cpp in Sources */,
 				1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
+				13323F3A21D306C80062BA01 /* Profile.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				132278E821D0D3420047B6B8 /* Page_0.cpp in Sources */,
 				1AF87B8A1F6F7822007BE51C /* main.m in Sources */,
+				13323F4821D31F780062BA01 /* Page_2.cpp in Sources */,
 				1356EAED21CA404500746E03 /* Layer_Main.cpp in Sources */,
+				13323F3F21D3153B0062BA01 /* ItemBox.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* SelectScene.cpp in Sources */,
+				13323F5A21D3786E0062BA01 /* VerticalLayer.cpp in Sources */,
 				13285C3221CB57FE005B8214 /* Layer_Select.cpp in Sources */,
+				132278F121D0DBC50047B6B8 /* Button.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,15 +684,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13323F4021D3153B0062BA01 /* ItemBox.cpp in Sources */,
 				13285C3321CB57FE005B8214 /* Layer_Select.cpp in Sources */,
 				1356EAEE21CA404500746E03 /* Layer_Main.cpp in Sources */,
+				13323F4921D31F780062BA01 /* Page_2.cpp in Sources */,
+				13323F3B21D306C80062BA01 /* Profile.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				132278AB21D0699B0047B6B8 /* MyMouse.cpp in Sources */,
 				132278CC21D0732E0047B6B8 /* Page.cpp in Sources */,
+				132278F221D0DBC50047B6B8 /* Button.cpp in Sources */,
+				13323F4E21D322A90062BA01 /* EventGroup.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				132278D321D09E100047B6B8 /* Layer_Base.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* SelectScene.cpp in Sources */,
 				132278E921D0D3420047B6B8 /* Page_0.cpp in Sources */,
+				13323F5B21D3786E0062BA01 /* VerticalLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

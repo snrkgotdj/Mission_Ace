@@ -18,10 +18,14 @@ class CPage : public Layer
 {
 protected:
     CLayer_Main* m_pLayer_Main;
+    Sprite* m_pBGSprite;
     const char* m_pBGName;
-    
+    bool m_bVerticalMove;
     
 public:
+    virtual void VerticalMove(const Vec2& _vDiff) {};
+    virtual void VerticalMoveUp() {};
+    bool checkVertical(Vec2 _vMousePos);
     const char* getBGName(){return m_pBGName;}
     
 public:

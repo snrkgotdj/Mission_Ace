@@ -58,7 +58,6 @@ void CSelectScene::MouseTouch()
 
 void CSelectScene::OnMouseDown(Event* _event)
 {
-    CCLOG("MouseDown");
     std::sort(m_vecLayer.begin(), m_vecLayer.end(), [](Node* _pLeft, Node* _pRight)->bool
     {return (_pLeft->getTag() < _pRight->getTag()); });
 
@@ -79,7 +78,6 @@ void CSelectScene::OnMouseMove(Event* _event)
 
 void CSelectScene::OnMouseUp(Event* _event)
 {
-    CCLOG("Mouse UP");
     
     
 }

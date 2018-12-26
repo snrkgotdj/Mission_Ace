@@ -22,13 +22,18 @@ class CLayer_Main : public CLayer_Base
 private:
     Scene* m_pScene;
     CLayer_Select* m_pSelectLayer;
+    Vector<CPage*> m_vecPage;
+    CPage* m_pVerticalPage;
     
+private:
     //위치 계산용 변수들
     Size m_tVisibleSize;
     Vec2 m_vCenterPos;
     Vec2 m_vOldMousePos;
     Vec2 m_vFirstMousePos;
     bool m_bMouseOn;
+    bool m_bMouseCheckOnce;
+    bool m_bCheckVertical;
     float m_fPageChangeTime;
     int m_iPagePad;
     int m_iCurPageTag;
@@ -37,11 +42,11 @@ private:
     int m_iMinPageTag;
     int m_iCountPageTag;
     
-   
 public:
     void changeCulSel(int _iCulSel);
     void setScene(CSelectScene* _pScene) {m_pScene = _pScene;}
     void setSelectLayer(CLayer_Select* _pSelectLayer){m_pSelectLayer = _pSelectLayer;}
+    void setVerticalPage(CPage* _pPage){ m_pVerticalPage = _pPage; }
     bool addPage(CPage* _pPage);
     bool addPageLeft(CPage* _pPage);
     bool addPageRight(CPage* _pPage);
