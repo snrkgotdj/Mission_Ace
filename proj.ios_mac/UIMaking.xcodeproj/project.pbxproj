@@ -43,16 +43,38 @@
 		13323F4921D31F780062BA01 /* Page_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F4621D31F780062BA01 /* Page_2.cpp */; };
 		13323F4D21D322A90062BA01 /* EventGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F4B21D322A90062BA01 /* EventGroup.cpp */; };
 		13323F4E21D322A90062BA01 /* EventGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F4B21D322A90062BA01 /* EventGroup.cpp */; };
-		13323F5021D324D30062BA01 /* EventGroup.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F4F21D324D20062BA01 /* EventGroup.png */; };
-		13323F5121D324D30062BA01 /* EventGroup.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F4F21D324D20062BA01 /* EventGroup.png */; };
-		13323F5621D33F9D0062BA01 /* EventItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F5521D33F9D0062BA01 /* EventItem.png */; };
-		13323F5721D33F9D0062BA01 /* EventItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F5521D33F9D0062BA01 /* EventItem.png */; };
+		13323F5021D324D30062BA01 /* EventGroup_00.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F4F21D324D20062BA01 /* EventGroup_00.png */; };
+		13323F5121D324D30062BA01 /* EventGroup_00.png in Resources */ = {isa = PBXBuildFile; fileRef = 13323F4F21D324D20062BA01 /* EventGroup_00.png */; };
 		13323F5A21D3786E0062BA01 /* VerticalLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F5821D3786E0062BA01 /* VerticalLayer.cpp */; };
 		13323F5B21D3786E0062BA01 /* VerticalLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13323F5821D3786E0062BA01 /* VerticalLayer.cpp */; };
 		1356EAE921CA3E0600746E03 /* Neco_Main.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1356EAE821CA3E0600746E03 /* Neco_Main.jpeg */; };
 		1356EAEA21CA3E0600746E03 /* Neco_Main.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1356EAE821CA3E0600746E03 /* Neco_Main.jpeg */; };
 		1356EAED21CA404500746E03 /* Layer_Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1356EAEB21CA404500746E03 /* Layer_Main.cpp */; };
 		1356EAEE21CA404500746E03 /* Layer_Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1356EAEB21CA404500746E03 /* Layer_Main.cpp */; };
+		1399564C21D474E4004DE14E /* EventIcon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399564A21D474E4004DE14E /* EventIcon.cpp */; };
+		1399564E21D47C21004DE14E /* EventIcon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399564A21D474E4004DE14E /* EventIcon.cpp */; };
+		1399565121D4BA59004DE14E /* PopupPage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399564F21D4BA59004DE14E /* PopupPage.cpp */; };
+		1399565221D4BA59004DE14E /* PopupPage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399564F21D4BA59004DE14E /* PopupPage.cpp */; };
+		1399565421D4D330004DE14E /* Money.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399565321D4D330004DE14E /* Money.png */; };
+		1399565521D4D330004DE14E /* Money.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399565321D4D330004DE14E /* Money.png */; };
+		1399565721D4D340004DE14E /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399565621D4D340004DE14E /* Book.png */; };
+		1399565821D4D340004DE14E /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399565621D4D340004DE14E /* Book.png */; };
+		1399565A21D4D34A004DE14E /* Crystal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399565921D4D34A004DE14E /* Crystal.png */; };
+		1399565B21D4D34A004DE14E /* Crystal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399565921D4D34A004DE14E /* Crystal.png */; };
+		1399566021D5B2D1004DE14E /* EventGroup_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399565F21D5B2D1004DE14E /* EventGroup_01.png */; };
+		1399566121D5B2D1004DE14E /* EventGroup_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399565F21D5B2D1004DE14E /* EventGroup_01.png */; };
+		1399566621D5B7B6004DE14E /* EventItem_00.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399566521D5B7B6004DE14E /* EventItem_00.png */; };
+		1399566721D5B7B6004DE14E /* EventItem_00.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399566521D5B7B6004DE14E /* EventItem_00.png */; };
+		1399566921D5B7C5004DE14E /* EventItem_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399566821D5B7C5004DE14E /* EventItem_01.png */; };
+		1399566A21D5B7C5004DE14E /* EventItem_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1399566821D5B7C5004DE14E /* EventItem_01.png */; };
+		1399566D21D5BD88004DE14E /* EventGroup_01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399566B21D5BD88004DE14E /* EventGroup_01.cpp */; };
+		1399566E21D5BD88004DE14E /* EventGroup_01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399566B21D5BD88004DE14E /* EventGroup_01.cpp */; };
+		1399567221D5C461004DE14E /* EventIconMaker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399567021D5C461004DE14E /* EventIconMaker.cpp */; };
+		1399567321D5C461004DE14E /* EventIconMaker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399567021D5C461004DE14E /* EventIconMaker.cpp */; };
+		1399567721D5C51E004DE14E /* EventIconMaker_01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399567521D5C51E004DE14E /* EventIconMaker_01.cpp */; };
+		1399567821D5C51E004DE14E /* EventIconMaker_01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399567521D5C51E004DE14E /* EventIconMaker_01.cpp */; };
+		1399567B21D5C92A004DE14E /* EventIcon_01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399567921D5C92A004DE14E /* EventIcon_01.cpp */; };
+		1399567C21D5C92A004DE14E /* EventIcon_01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1399567921D5C92A004DE14E /* EventIcon_01.cpp */; };
 		1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A88B2631FC3D9C9005C14AE /* Images.xcassets */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
@@ -169,13 +191,30 @@
 		13323F4721D31F780062BA01 /* Page_2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Page_2.hpp; sourceTree = "<group>"; };
 		13323F4B21D322A90062BA01 /* EventGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EventGroup.cpp; sourceTree = "<group>"; };
 		13323F4C21D322A90062BA01 /* EventGroup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EventGroup.hpp; sourceTree = "<group>"; };
-		13323F4F21D324D20062BA01 /* EventGroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EventGroup.png; sourceTree = "<group>"; };
-		13323F5521D33F9D0062BA01 /* EventItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EventItem.png; path = ../EventItem.png; sourceTree = "<group>"; };
+		13323F4F21D324D20062BA01 /* EventGroup_00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EventGroup_00.png; sourceTree = "<group>"; };
 		13323F5821D3786E0062BA01 /* VerticalLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalLayer.cpp; path = ../VerticalLayer.cpp; sourceTree = "<group>"; };
 		13323F5921D3786E0062BA01 /* VerticalLayer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = VerticalLayer.hpp; path = ../VerticalLayer.hpp; sourceTree = "<group>"; };
 		1356EAE821CA3E0600746E03 /* Neco_Main.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neco_Main.jpeg; sourceTree = "<group>"; };
 		1356EAEB21CA404500746E03 /* Layer_Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Layer_Main.cpp; sourceTree = "<group>"; };
 		1356EAEC21CA404500746E03 /* Layer_Main.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Layer_Main.hpp; sourceTree = "<group>"; };
+		1399564A21D474E4004DE14E /* EventIcon.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EventIcon.cpp; sourceTree = "<group>"; };
+		1399564B21D474E4004DE14E /* EventIcon.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EventIcon.hpp; sourceTree = "<group>"; };
+		1399564F21D4BA59004DE14E /* PopupPage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PopupPage.cpp; sourceTree = "<group>"; };
+		1399565021D4BA59004DE14E /* PopupPage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PopupPage.hpp; sourceTree = "<group>"; };
+		1399565321D4D330004DE14E /* Money.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Money.png; path = ../../../Money.png; sourceTree = "<group>"; };
+		1399565621D4D340004DE14E /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Book.png; path = ../../../Book.png; sourceTree = "<group>"; };
+		1399565921D4D34A004DE14E /* Crystal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Crystal.png; path = ../../../Crystal.png; sourceTree = "<group>"; };
+		1399565F21D5B2D1004DE14E /* EventGroup_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EventGroup_01.png; sourceTree = "<group>"; };
+		1399566521D5B7B6004DE14E /* EventItem_00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EventItem_00.png; sourceTree = "<group>"; };
+		1399566821D5B7C5004DE14E /* EventItem_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EventItem_01.png; sourceTree = "<group>"; };
+		1399566B21D5BD88004DE14E /* EventGroup_01.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EventGroup_01.cpp; sourceTree = "<group>"; };
+		1399566C21D5BD88004DE14E /* EventGroup_01.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EventGroup_01.hpp; sourceTree = "<group>"; };
+		1399567021D5C461004DE14E /* EventIconMaker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EventIconMaker.cpp; sourceTree = "<group>"; };
+		1399567121D5C461004DE14E /* EventIconMaker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EventIconMaker.hpp; sourceTree = "<group>"; };
+		1399567521D5C51E004DE14E /* EventIconMaker_01.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EventIconMaker_01.cpp; sourceTree = "<group>"; };
+		1399567621D5C51E004DE14E /* EventIconMaker_01.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EventIconMaker_01.hpp; sourceTree = "<group>"; };
+		1399567921D5C92A004DE14E /* EventIcon_01.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EventIcon_01.cpp; sourceTree = "<group>"; };
+		1399567A21D5C92A004DE14E /* EventIcon_01.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EventIcon_01.hpp; sourceTree = "<group>"; };
 		1A88B2631FC3D9C9005C14AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
@@ -285,6 +324,7 @@
 		132278CE21D082A90047B6B8 /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				1399567E21D5D099004DE14E /* New Group */,
 				13323F3C21D315100062BA01 /* Page_0 */,
 				13323F4521D31F260062BA01 /* Page_2 */,
 				132278DA21D0CB810047B6B8 /* Button */,
@@ -352,8 +392,13 @@
 		13323F4421D31E3E0062BA01 /* Page_02 */ = {
 			isa = PBXGroup;
 			children = (
-				13323F5521D33F9D0062BA01 /* EventItem.png */,
-				13323F4F21D324D20062BA01 /* EventGroup.png */,
+				1399566521D5B7B6004DE14E /* EventItem_00.png */,
+				1399566821D5B7C5004DE14E /* EventItem_01.png */,
+				13323F4F21D324D20062BA01 /* EventGroup_00.png */,
+				1399565F21D5B2D1004DE14E /* EventGroup_01.png */,
+				1399565321D4D330004DE14E /* Money.png */,
+				1399565621D4D340004DE14E /* Book.png */,
+				1399565921D4D34A004DE14E /* Crystal.png */,
 			);
 			path = Page_02;
 			sourceTree = "<group>";
@@ -373,10 +418,52 @@
 		13323F4A21D322300062BA01 /* EventGroup */ = {
 			isa = PBXGroup;
 			children = (
+				1399566F21D5C3D9004DE14E /* EventIcon */,
 				13323F4B21D322A90062BA01 /* EventGroup.cpp */,
 				13323F4C21D322A90062BA01 /* EventGroup.hpp */,
+				1399566B21D5BD88004DE14E /* EventGroup_01.cpp */,
+				1399566C21D5BD88004DE14E /* EventGroup_01.hpp */,
+				1399564F21D4BA59004DE14E /* PopupPage.cpp */,
+				1399565021D4BA59004DE14E /* PopupPage.hpp */,
 			);
 			path = EventGroup;
+			sourceTree = "<group>";
+		};
+		1399566F21D5C3D9004DE14E /* EventIcon */ = {
+			isa = PBXGroup;
+			children = (
+				1399567421D5C4FD004DE14E /* IconMaker */,
+				1399564A21D474E4004DE14E /* EventIcon.cpp */,
+				1399564B21D474E4004DE14E /* EventIcon.hpp */,
+				1399567921D5C92A004DE14E /* EventIcon_01.cpp */,
+				1399567A21D5C92A004DE14E /* EventIcon_01.hpp */,
+			);
+			path = EventIcon;
+			sourceTree = "<group>";
+		};
+		1399567421D5C4FD004DE14E /* IconMaker */ = {
+			isa = PBXGroup;
+			children = (
+				1399567021D5C461004DE14E /* EventIconMaker.cpp */,
+				1399567121D5C461004DE14E /* EventIconMaker.hpp */,
+				1399567521D5C51E004DE14E /* EventIconMaker_01.cpp */,
+				1399567621D5C51E004DE14E /* EventIconMaker_01.hpp */,
+			);
+			path = IconMaker;
+			sourceTree = "<group>";
+		};
+		1399567D21D5D011004DE14E /* Page_01 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Page_01;
+			sourceTree = "<group>";
+		};
+		1399567E21D5D099004DE14E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -460,6 +547,7 @@
 			isa = PBXGroup;
 			children = (
 				13323F2A21D304C90062BA01 /* Page_00 */,
+				1399567D21D5D011004DE14E /* Page_01 */,
 				13323F4421D31E3E0062BA01 /* Page_02 */,
 				13323F2E21D305610062BA01 /* BackGround */,
 				521A8EA819F11F5000D177D7 /* fonts */,
@@ -607,7 +695,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				13285C2B21CB573A005B8214 /* Neco_3.jpg in Resources */,
+				1399565A21D4D34A004DE14E /* Crystal.png in Resources */,
 				13323F3321D306420062BA01 /* Profile_Button.png in Resources */,
+				1399566021D5B2D1004DE14E /* EventGroup_01.png in Resources */,
+				1399566921D5B7C5004DE14E /* EventItem_01.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
 				13285C2E21CB573F005B8214 /* Neco_4.jpg in Resources */,
@@ -615,13 +706,15 @@
 				13323F4221D317750062BA01 /* ItemBox.png in Resources */,
 				13285C2821CB5621005B8214 /* Neco_2.jpg in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
-				13323F5621D33F9D0062BA01 /* EventItem.png in Resources */,
+				1399565721D4D340004DE14E /* Book.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				13285C2521CB5588005B8214 /* Neco_1.jpg in Resources */,
-				13323F5021D324D30062BA01 /* EventGroup.png in Resources */,
+				1399565421D4D330004DE14E /* Money.png in Resources */,
+				13323F5021D324D30062BA01 /* EventGroup_00.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				132278D821D0B1610047B6B8 /* Pannel.png in Resources */,
 				1356EAE921CA3E0600746E03 /* Neco_Main.jpeg in Resources */,
+				1399566621D5B7B6004DE14E /* EventItem_00.png in Resources */,
 				13323F3021D305E90062BA01 /* Profile_Mid.png in Resources */,
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
@@ -636,19 +729,24 @@
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
 				13323F3121D305E90062BA01 /* Profile_Mid.png in Resources */,
 				13285C2921CB5621005B8214 /* Neco_2.jpg in Resources */,
-				13323F5121D324D30062BA01 /* EventGroup.png in Resources */,
+				1399565B21D4D34A004DE14E /* Crystal.png in Resources */,
+				13323F5121D324D30062BA01 /* EventGroup_00.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				13285C2F21CB573F005B8214 /* Neco_4.jpg in Resources */,
 				1356EAEA21CA3E0600746E03 /* Neco_Main.jpeg in Resources */,
+				1399565821D4D340004DE14E /* Book.png in Resources */,
 				13323F4321D317750062BA01 /* ItemBox.png in Resources */,
 				13285C2C21CB573A005B8214 /* Neco_3.jpg in Resources */,
+				1399566A21D5B7C5004DE14E /* EventItem_01.png in Resources */,
+				1399566121D5B2D1004DE14E /* EventGroup_01.png in Resources */,
+				1399565521D4D330004DE14E /* Money.png in Resources */,
 				13323F3421D306420062BA01 /* Profile_Button.png in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
-				13323F5721D33F9D0062BA01 /* EventItem.png in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				13285C2621CB5588005B8214 /* Neco_1.jpg in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				1399566721D5B7B6004DE14E /* EventItem_00.png in Resources */,
 				13323F3721D306470062BA01 /* Profile_Setting.png in Resources */,
 				132278D921D0B1610047B6B8 /* Pannel.png in Resources */,
 			);
@@ -663,19 +761,25 @@
 			files = (
 				132278CB21D0732E0047B6B8 /* Page.cpp in Sources */,
 				13323F4D21D322A90062BA01 /* EventGroup.cpp in Sources */,
+				1399567221D5C461004DE14E /* EventIconMaker.cpp in Sources */,
 				132278D221D09E100047B6B8 /* Layer_Base.cpp in Sources */,
+				1399567B21D5C92A004DE14E /* EventIcon_01.cpp in Sources */,
+				1399566D21D5BD88004DE14E /* EventGroup_01.cpp in Sources */,
 				1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
 				13323F3A21D306C80062BA01 /* Profile.cpp in Sources */,
+				1399567721D5C51E004DE14E /* EventIconMaker_01.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				132278E821D0D3420047B6B8 /* Page_0.cpp in Sources */,
 				1AF87B8A1F6F7822007BE51C /* main.m in Sources */,
+				1399565121D4BA59004DE14E /* PopupPage.cpp in Sources */,
 				13323F4821D31F780062BA01 /* Page_2.cpp in Sources */,
 				1356EAED21CA404500746E03 /* Layer_Main.cpp in Sources */,
 				13323F3F21D3153B0062BA01 /* ItemBox.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* SelectScene.cpp in Sources */,
 				13323F5A21D3786E0062BA01 /* VerticalLayer.cpp in Sources */,
 				13285C3221CB57FE005B8214 /* Layer_Select.cpp in Sources */,
+				1399564C21D474E4004DE14E /* EventIcon.cpp in Sources */,
 				132278F121D0DBC50047B6B8 /* Button.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,16 +792,22 @@
 				13285C3321CB57FE005B8214 /* Layer_Select.cpp in Sources */,
 				1356EAEE21CA404500746E03 /* Layer_Main.cpp in Sources */,
 				13323F4921D31F780062BA01 /* Page_2.cpp in Sources */,
+				1399567C21D5C92A004DE14E /* EventIcon_01.cpp in Sources */,
 				13323F3B21D306C80062BA01 /* Profile.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				132278CC21D0732E0047B6B8 /* Page.cpp in Sources */,
 				132278F221D0DBC50047B6B8 /* Button.cpp in Sources */,
+				1399567821D5C51E004DE14E /* EventIconMaker_01.cpp in Sources */,
 				13323F4E21D322A90062BA01 /* EventGroup.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				132278D321D09E100047B6B8 /* Layer_Base.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* SelectScene.cpp in Sources */,
 				132278E921D0D3420047B6B8 /* Page_0.cpp in Sources */,
+				1399564E21D47C21004DE14E /* EventIcon.cpp in Sources */,
 				13323F5B21D3786E0062BA01 /* VerticalLayer.cpp in Sources */,
+				1399566E21D5BD88004DE14E /* EventGroup_01.cpp in Sources */,
+				1399567321D5C461004DE14E /* EventIconMaker.cpp in Sources */,
+				1399565221D4BA59004DE14E /* PopupPage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

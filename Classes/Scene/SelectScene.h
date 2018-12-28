@@ -38,10 +38,15 @@ class CSelectScene : public cocos2d::Scene
 private:
     CLayer_Main* m_pMainLayer;
     CLayer_Select* m_pSelectLayer;
-    
     Vector<CLayer_Base*> m_vecLayer;
     
+private:
+    bool m_bTouch;
+    bool m_bNextTouch;
+    
 public:
+    void setTouch(bool _bTouch) { m_bTouch = _bTouch; }
+    void setTouchNext(bool _bTrue){ m_bNextTouch = _bTrue; }
     static cocos2d::Scene* createScene();
     virtual bool init();
     CREATE_FUNC(CSelectScene);

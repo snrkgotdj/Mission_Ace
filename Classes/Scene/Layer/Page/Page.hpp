@@ -23,10 +23,16 @@ protected:
     bool m_bVerticalMove;
     
 public:
+    const char*     getBGName() { return m_pBGName; }
+    CLayer_Main*    getMainLayer() { return m_pLayer_Main; }
+    Sprite*         getBGSprite(){ return m_pBGSprite; }
+    
+public:
+    virtual void mouseTouch(Event* _event) {};
     virtual void VerticalMove(const Vec2& _vDiff) {};
     virtual void VerticalMoveUp() {};
-    bool checkVertical(Vec2 _vMousePos);
-    const char* getBGName(){return m_pBGName;}
+    bool checkVertical(const Vec2& _vMousePos);
+    bool checkTouch(const Vec2& _vMousePos);
     
 public:
     virtual bool init(const char* _ImageName, CLayer_Main* _MainLayer);
@@ -34,7 +40,7 @@ public:
     
 protected:
     CPage();
-    ~CPage();
+    virtual ~CPage();
 };
 
 

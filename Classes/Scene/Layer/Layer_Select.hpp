@@ -24,6 +24,10 @@ private:
     Size m_tCurSelectSize;
     
 public:
+    const Size& getIconSize(){return m_tSelectSize;}
+    const Size& getCurIconSize() {return m_tCurSelectSize;}
+    
+public:
     void changeCulSel(int _iBefore, int _iCul);
     
 private:

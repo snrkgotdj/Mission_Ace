@@ -6,6 +6,8 @@
 USING_NS_CC;
 
 CSelectScene::CSelectScene()
+    : m_bTouch(true)
+    , m_bNextTouch(false)
 {
     
 }
@@ -58,6 +60,17 @@ void CSelectScene::MouseTouch()
 
 void CSelectScene::OnMouseDown(Event* _event)
 {
+    if(false == m_bTouch)
+    {
+        if( true == m_bNextTouch)
+        {
+            m_bTouch = true;
+            m_bNextTouch = false;
+        }
+        return;
+    }
+    
+        
     std::sort(m_vecLayer.begin(), m_vecLayer.end(), [](Node* _pLeft, Node* _pRight)->bool
     {return (_pLeft->getTag() < _pRight->getTag()); });
 

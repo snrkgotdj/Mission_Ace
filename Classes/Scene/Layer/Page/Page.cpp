@@ -62,7 +62,7 @@ CPage* CPage::create(const char* _ImageName, CLayer_Main* _MainLayer)
     }
 }
 
-bool CPage::checkVertical(Vec2 _vMousePos)
+bool CPage::checkVertical(const Vec2& _vMousePos)
 {
     if(false == m_bVerticalMove)
         return false;
@@ -70,6 +70,14 @@ bool CPage::checkVertical(Vec2 _vMousePos)
     Rect rect = m_pBGSprite->getBoundingBox();
     rect.origin.x += getPositionX() + m_pLayer_Main->getPositionX();
     m_pLayer_Main->setVerticalPage(this);
+    
+    return rect.containsPoint(_vMousePos);
+}
+
+bool CPage::checkTouch(const Vec2& _vMousePos)
+{
+    Rect rect = m_pBGSprite->getBoundingBox();
+    rect.origin.x += getPositionX() + m_pLayer_Main->getPositionX();
     
     return rect.containsPoint(_vMousePos);
 }

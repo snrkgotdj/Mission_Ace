@@ -53,6 +53,8 @@ public:
     
     
 public:
+    Scene* getScene() {return m_pScene;}
+    CLayer_Select* getSelectLayer() { return m_pSelectLayer; }
     Vec2 getNextPagePos() const;
     const Vec2& getCenterPos() const {return m_vCenterPos;}
     const Size& getVisibleSize() const {return m_tVisibleSize;}

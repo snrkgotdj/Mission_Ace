@@ -22,6 +22,7 @@ private:
     CVerticalLayer* m_pLayer;
 
 public:
+    virtual void mouseTouch(Event* _event) override; 
     virtual void VerticalMove(const Vec2& _vDiff) override;
     virtual void VerticalMoveUp() override;
     
@@ -29,9 +30,9 @@ public:
     virtual bool init(const char* _ImageName, CLayer_Main* _MainLayer) override;
     static CPage_2* create(const char* _ImageName, CLayer_Main* _MainLayer);
     
-private:
+protected:
     CPage_2();
-    ~CPage_2();
+    virtual ~CPage_2();
 };
 
 

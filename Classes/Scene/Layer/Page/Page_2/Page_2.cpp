@@ -50,6 +50,11 @@ CPage_2* CPage_2::create(const char* _ImageName, CLayer_Main* _MainLayer)
     }
 }
 
+void CPage_2::mouseTouch(Event *_event)
+{
+    m_pLayer->mouseTouch(_event);
+}
+
 void CPage_2::VerticalMove(const Vec2& _vDiff)
 {
     m_pLayer->VerticalMove(_vDiff);
