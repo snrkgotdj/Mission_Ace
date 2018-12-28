@@ -10,7 +10,7 @@
 #include "Page.hpp"
 #include "Page_0.hpp"
 #include "Page_2.hpp"
-
+#include "Page_1.hpp"
 using namespace cocos2d;
 
 CLayer_Main::CLayer_Main()
@@ -61,7 +61,7 @@ bool CLayer_Main::init(Scene* _pScene)
 void CLayer_Main::createPage()
 {
     this->addPage(CPage_0::create("Neco_Main.jpeg", this));
-    this->addPage(CPage::create("Neco_1.jpg", this));
+    this->addPage(CPage_1::create("Neco_1.jpg", this));
     this->addPage(CPage::create("Neco_2.jpg", this));
     this->addPage(CPage_2::create("Neco_3.jpg", this));
     this->addPage(CPage::create("Neco_4.jpg", this));

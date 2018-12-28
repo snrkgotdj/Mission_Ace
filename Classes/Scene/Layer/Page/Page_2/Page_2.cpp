@@ -58,7 +58,6 @@ void CPage_2::mouseTouch(Event *_event)
 void CPage_2::VerticalMove(const Vec2& _vDiff)
 {
     m_pLayer->VerticalMove(_vDiff);
- 
 }
 
 void CPage_2::VerticalMoveUp()
