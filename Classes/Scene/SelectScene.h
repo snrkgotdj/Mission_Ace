@@ -45,8 +45,8 @@ private:
     bool m_bNextTouch;
     
 public:
-    void setTouch(bool _bTouch) { m_bTouch = _bTouch; }
-    void setTouchNext(bool _bTrue){ m_bNextTouch = _bTrue; }
+    void setTouch(bool _bTouch);
+    void setTouchNext(bool _bTrue);
     static cocos2d::Scene* createScene();
     virtual bool init();
     CREATE_FUNC(CSelectScene);

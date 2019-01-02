@@ -16,7 +16,7 @@ class CTabFriend : public CTabBase
 
 public:
     virtual void initData();
-    virtual bool init(CPage_1* _pPage);
+    bool init(CPage_1* _pPage);
     static CTabFriend* create(CPage_1* _pPage);
     
     

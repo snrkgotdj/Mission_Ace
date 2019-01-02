@@ -76,7 +76,6 @@ bool CPopupPage::onTouchBegan(Touch* touch, Event* event)
     }
     else
     {
-        Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget((Layer*)m_pPage->getMainLayer());
         ((CSelectScene*)m_pPage->getMainLayer()->getScene())->setTouchNext(true);
         m_pPage->removeChild(this);
     }

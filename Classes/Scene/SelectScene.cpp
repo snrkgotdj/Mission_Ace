@@ -66,6 +66,7 @@ void CSelectScene::OnMouseDown(Event* _event)
         {
             m_bTouch = true;
             m_bNextTouch = false;
+            Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(m_pMainLayer);
         }
         return;
     }
@@ -93,4 +94,18 @@ void CSelectScene::OnMouseUp(Event* _event)
 {
     
     
+}
+
+void CSelectScene::setTouch(bool _bTouch)
+{
+    m_bTouch = _bTouch;
+    if(false == _bTouch)
+    {
+        Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(m_pMainLayer);
+    }
+}
+
+void CSelectScene::setTouchNext(bool _bTrue)
+{
+     m_bNextTouch = _bTrue;
 }
