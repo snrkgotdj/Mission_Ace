@@ -20,7 +20,8 @@ class CPage_m1 : public CPage
 private:
     CBattleDack* m_pBattleDack;
     Vec2 m_vMouseDiff;
-  
+    bool m_bMove;
+    
 private:
     void update(float delta);
     

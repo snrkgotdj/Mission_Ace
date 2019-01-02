@@ -21,6 +21,8 @@ private:
     CBattleDack* m_pBattleDack;
     Sprite* m_pPannel;
     CCard* m_arrCard[8];
+    CCard* m_pSelCard;
+    CCard* m_pSelCard_2;
     
 private:
     Vec2 m_vVisible;
@@ -31,12 +33,23 @@ private:
 public:
     Vec2 getPannelSize() const {return m_pPannel->getContentSize();}
     const Vec2& getDackPos() const {return m_vDackPos;}
+    CCard* getSelCard() {return m_pSelCard;}
+    CCard* getSelCard2() {return m_pSelCard_2;}
     
 public:
     bool isMouseOn(Event* _event);
+    bool isMouseOn(const Vec2& _vMousePos);
+    bool isMouseOnSecond(const Vec2& _vMousePos);
+    void waveCard();
+    void stopCard();
+    void changeCard();
+    void changeCard(CCard* _pCard);
+    void resetSelCard();
     
 private:
     void createCard();
+    Vec2 getCardPos(CCard* _pCard);
+    
     
 protected:
     void initData();

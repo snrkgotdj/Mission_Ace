@@ -40,9 +40,9 @@ bool CBattleDack::init(CPage_m1 *_pPage)
     m_pDack = CDack::create(this);
     m_pPage = _pPage;
     
-    createCard();
-    
     this->addChild(m_pDack);
+    
+    createCard();
     
     auto touch = EventListenerMouse::create();
     touch->onMouseMove = CC_CALLBACK_1(CBattleDack::OnMouseMove, this);
@@ -74,9 +74,7 @@ void CBattleDack::createCard()
     Vec2 vDackPos = m_pDack->getDackPos();
     const Vec2& vVisibleSize = Director::getInstance()->getVisibleSize();
     
-    vDackPos.x += 10;
-    vDackPos.y -= vPannelSize.y + 70;
-    m_vCardStartPos = vDackPos;
+    
     
     CCard* pCard = nullptr;
     for(int i = 0; i < m_iFirstCardCount; ++i)
@@ -89,6 +87,10 @@ void CBattleDack::createCard()
     m_vCardSize = pCard->getContentSize();
     m_vCardPad.x = (vVisibleSize.x - m_vCardSize.x * 4 - vDackPos.x * 2) * 0.25;
     m_vCardPad.y = m_vCardPad.x * 2;
+    
+    vDackPos.x += 10 + m_vCardSize.x * 0.5;
+    vDackPos.y -= vPannelSize.y + 70 + m_vCardSize.y * 0.5;
+    m_vCardStartPos = vDackPos;
     
     renewCardPos();
 }
@@ -117,7 +119,7 @@ void CBattleDack::renewCardPos()
     Vec2 vPannelSize = m_pDack->getPannelSize();
     Vec2 vDackPos = m_pDack->getDackPos();
     const Vec2& vVisibleSize = Director::getInstance()->getVisibleSize();
-    m_iHeight = vVisibleSize.y - m_vCardStartPos.y + m_iLastColum * (iCardSize.y + m_vCardPad.y) + iCardSize.y;
+    m_iHeight = vVisibleSize.y - m_vCardStartPos.y + m_iLastColum * (iCardSize.y + m_vCardPad.y) + iCardSize.y * 0.5;
 }
 
 void CBattleDack::mouseTouch(Event *_event)
@@ -160,37 +162,51 @@ void CBattleDack::OnMouseUp(Event *_event)
     if(nullptr == m_pSelCard)
         return;
     
-    disAbleCard(m_pSelCard);
+    disableCard(m_pSelCard);
     moveCard(m_pSelCard);
+    m_pSelCard->enableTouch();
     
+    m_pDack->waveCard();
     
     m_pSelCard = nullptr;
 }
 
 
-void CBattleDack::disAbleCard(CCard* _except)
+void CBattleDack::disableCard(CCard* _except)
 {
     for(auto card: m_listCard)
     {
         if(_except == card)
             continue;
         
-        card->disAble();
+        card->disable();
     }
     
     ((CSelectScene*)m_pPage->getMainLayer()->getScene())->setTouch(false);
 }
 
+void CBattleDack::enableCard()
+{
+    for(auto card: m_listCard)
+    {
+        card->enable();
+    }
+    
+    m_pDack->stopCard();
+    ((CSelectScene*)m_pPage->getMainLayer()->getScene())->setTouch(false);
+}
+
 void CBattleDack::moveCard(CCard* _pCard)
 {
+    this->stopAllActions();
     this->setPositionY(0);
     
     const Size& MenuIconSize = m_pPage->getMainLayer()->getSelectLayer()->getCurIconSize();
     const Size& vVisible = Director::getInstance()->getVisibleSize();
     
-    Vec2 vPos = Vec2(vVisible.width * 0.5 - m_vCardSize.x * 0.5 , MenuIconSize.height + m_vCardSize.y);
+    Vec2 vPos = Vec2(vVisible.width * 0.5 , MenuIconSize.height + m_vCardSize.y * 0.5);
     
-    auto action = EaseOut::create(MoveTo::create(1, vPos), 5);
+    auto action = EaseOut::create(MoveTo::create(0.7, vPos), 5);
     
     _pCard->runAction(action);
 }

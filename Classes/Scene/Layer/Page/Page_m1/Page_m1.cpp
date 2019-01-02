@@ -13,6 +13,7 @@
 CPage_m1::CPage_m1()
     :m_pBattleDack(nullptr)
     , m_vMouseDiff(Vec2::ZERO)
+    , m_bMove(false)
 {
     m_bVerticalMove = true;
 }
@@ -24,6 +25,9 @@ CPage_m1::~CPage_m1()
 
 void CPage_m1::update(float _delta)
 {
+    if(m_bMove)
+        return;
+    
     const Vec2& vPos = m_pBattleDack->getPosition();
     const Vec2& vVisibleSize = Director::getInstance()->getVisibleSize();
     const Size& MenuIconSize = getMainLayer()->getSelectLayer()->getCurIconSize();
@@ -75,12 +79,14 @@ void CPage_m1::mouseTouch(Event *_event)
 {
     m_pBattleDack->stopAllActions();
     m_pBattleDack->mouseTouch(_event);
+    m_bMove = false;
 }
 
 void CPage_m1::VerticalMove(const Vec2& _vDiff)
 {
     m_pBattleDack->setPositionY(m_pBattleDack->getPositionY() + _vDiff.y);
     m_vMouseDiff = _vDiff;
+    m_bMove = true;
 }
 
 void CPage_m1::VerticalMoveUp()
@@ -106,6 +112,7 @@ void CPage_m1::VerticalMoveUp()
         else
         {
             action = EaseOut::create(MoveBy::create(0.7f, Vec2( 0, m_vMouseDiff.y * 20)), 7);
+            m_bMove = false;
         }
     }
     if(action)

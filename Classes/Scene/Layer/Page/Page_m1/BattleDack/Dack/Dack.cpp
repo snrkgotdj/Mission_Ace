@@ -13,6 +13,8 @@
 CDack::CDack()
 : m_pBattleDack(nullptr)
 , m_pPannel(nullptr)
+, m_pSelCard(nullptr)
+, m_pSelCard_2(nullptr)
 , m_arrCard{}
 , m_vVisible(Vec2::ZERO)
 , m_vDackPos(Vec2::ZERO)
@@ -96,8 +98,8 @@ void CDack::createCard()
         int iRow = i % 4;
         int iColum = i / 4;
         
-        vCardPos.x = m_vCardStartPos.x + iRow * (vCardSize.x + m_vCardPad.x);
-        vCardPos.y = m_vCardStartPos.y - iColum * (vCardSize.y + m_vCardPad.y);
+        vCardPos.x = m_vCardStartPos.x + iRow * (vCardSize.x + m_vCardPad.x) + pCard->getContentSize().width * 0.5;
+        vCardPos.y = m_vCardStartPos.y - iColum * (vCardSize.y + m_vCardPad.y)- pCard->getContentSize().height * 0.5;
         
         pCard->setPosition(vCardPos);
         pCard->setRowCol(iRow, iColum);
@@ -112,6 +114,12 @@ bool CDack::isMouseOn(Event *_event)
 {
     EventMouse* pMouse = (EventMouse*)_event;
     Vec2 vMousePos = Vec2(pMouse->getCursorX(), pMouse->getCursorY());
+    
+    return isMouseOn(vMousePos);
+}
+
+bool CDack::isMouseOn(const Vec2 &_vMousePos)
+{
     int iDackPos = m_pBattleDack->getPositionY();
     for(int i = 0; i < 8; ++i)
     {
@@ -119,11 +127,115 @@ bool CDack::isMouseOn(Event *_event)
         rect.origin.x += m_vDackPos.x;
         rect.origin.y = m_vDackPos.y + rect.origin.y - m_pPannel->getContentSize().height + iDackPos;
         
-        if(rect.containsPoint(vMousePos))
+        if(rect.containsPoint(_vMousePos))
         {
-            int a = 0;
+            m_pSelCard = m_arrCard[i];
+            return true;
         }
     }
-    
     return false;
+}
+
+bool CDack::isMouseOnSecond(const Vec2 &_vMousePos)
+{
+    int iDackPos = m_pBattleDack->getPositionY();
+    for(int i = 0; i < 8; ++i)
+    {
+        Rect rect = m_arrCard[i]->getBoundingBox();
+        rect.origin.x += m_vDackPos.x;
+        rect.origin.y = m_vDackPos.y + rect.origin.y - m_pPannel->getContentSize().height + iDackPos;
+        
+        if(rect.containsPoint(_vMousePos))
+        {
+            if(m_pSelCard == m_arrCard[i])
+                continue;
+            
+            m_pSelCard_2 = m_arrCard[i];
+            return true;
+        }
+    }
+    return false;
+}
+
+void CDack::waveCard()
+{
+    m_arrCard[0]->setState(CARD_WAVE_LEFT);
+    m_arrCard[2]->setState(CARD_WAVE_LEFT);
+    m_arrCard[5]->setState(CARD_WAVE_LEFT);
+    m_arrCard[7]->setState(CARD_WAVE_LEFT);
+    
+    m_arrCard[1]->setState(CARD_WAVE_RIGHT);
+    m_arrCard[3]->setState(CARD_WAVE_RIGHT);
+    m_arrCard[4]->setState(CARD_WAVE_RIGHT);
+    m_arrCard[6]->setState(CARD_WAVE_RIGHT);
+}
+
+void CDack::stopCard()
+{
+    for(int i = 0; i < 8; ++i)
+    {
+        m_arrCard[i]->setState(CARD_END);
+    }
+}
+
+void CDack::changeCard()
+{
+    if(!m_pSelCard)
+        return;
+    if(!m_pSelCard_2)
+        return;
+    
+    Vec2 vSize = m_pSelCard->getContentSize();
+    
+    int iIdx = m_pSelCard->getIdx();
+    int iIdx2 = m_pSelCard_2->getIdx();
+    Vec2 vPos1 = m_pSelCard->getPosition();
+    Vec2 vPos2 = m_pSelCard_2->getPosition();
+    
+    m_arrCard[iIdx] = m_pSelCard_2;
+    m_arrCard[iIdx2] = m_pSelCard;
+    m_pSelCard->setRowCol(iIdx2);
+    m_pSelCard_2->setRowCol(iIdx);
+    
+    m_pSelCard->setPosition(vPos2);
+    
+    Vec2 vCardPos = getCardPos(m_pSelCard);
+    
+    auto action = MoveTo::create(0.12, vCardPos);
+    m_pSelCard_2->runAction(action);
+    m_pSelCard_2->setState(CARD_SIZEDOWN);
+}
+
+void CDack::changeCard(CCard *_pCard)
+{
+    if(!m_pSelCard)
+        return;
+    if(!_pCard)
+        return;
+    
+}
+
+void CDack::resetSelCard()
+{
+    if(!m_pSelCard)
+        return;
+    
+    Vec2 vPos = getCardPos(m_pSelCard);
+    auto action = MoveTo::create(0.08, vPos);
+    m_pSelCard->runAction(action);
+    
+    m_pSelCard = nullptr;
+    m_pSelCard_2 = nullptr;
+}
+
+Vec2 CDack::getCardPos(CCard* _pCard)
+{
+    Vec2 vCardPos = Vec2::ZERO;
+    Vec2 vSize = _pCard->getContentSize();
+    int iIdx = _pCard->getIdx();
+    
+    vCardPos.x = m_vCardStartPos.x + (iIdx % 4) * (vSize.x + m_vCardPad.x) + vSize.x * 0.5;
+    vCardPos.y = m_vCardStartPos.y - (iIdx / 4) * (vSize.y + m_vCardPad.y) - vSize.y * 0.5;
+    
+    return vCardPos;
 }

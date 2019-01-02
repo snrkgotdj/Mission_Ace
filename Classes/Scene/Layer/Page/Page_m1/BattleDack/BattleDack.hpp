@@ -19,6 +19,8 @@ class CCard;
 
 class CBattleDack : public Layer
 {
+    friend class CCard;
+    friend class CDack;
 private:
     CPage_m1* m_pPage;
     CDack* m_pDack;
@@ -37,6 +39,8 @@ private:
 public:
     int getLastColum() const {return m_iLastColum;}
     int getHeight() const {return m_iHeight;}
+    CDack* getDack() const {return m_pDack;}
+    CPage_m1* getPage() const {return m_pPage;}
     
 public:
     void mouseTouch(Event* _event);
@@ -46,7 +50,8 @@ private:
     void OnMouseUp(Event* _event);
     
 private:
-    void disAbleCard(CCard* _except);
+    void disableCard(CCard* _except);
+    void enableCard();
     void moveCard(CCard* _pCard);
     void createCard();
     void renewCardPos();
