@@ -117,4 +117,6 @@ void CPage_m1::VerticalMoveUp()
     }
     if(action)
         m_pBattleDack->runAction(action);
+    
+    m_vMouseDiff = Vec2::ZERO;
 }

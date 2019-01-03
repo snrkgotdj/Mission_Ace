@@ -172,6 +172,8 @@ void CVerticalLayer::VerticalMoveUp()
     
     if(action)
         this->runAction(action);
+    
+    m_vMouseDiff = Vec2::ZERO;
 }
 
 void CVerticalLayer::plusEventGroup(Ref* _sender)

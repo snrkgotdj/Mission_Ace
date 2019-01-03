@@ -103,6 +103,7 @@ void CDack::createCard()
         
         pCard->setPosition(vCardPos);
         pCard->setRowCol(iRow, iColum);
+        pCard->setDack(true);
         
         m_arrCard[i] = pCard;
         m_pPannel->addChild(m_arrCard[i]);
@@ -191,6 +192,7 @@ void CDack::changeCard()
     int iIdx2 = m_pSelCard_2->getIdx();
     Vec2 vPos1 = m_pSelCard->getPosition();
     Vec2 vPos2 = m_pSelCard_2->getPosition();
+    Vec2 vCardPos = getCardPos(m_pSelCard);
     
     m_arrCard[iIdx] = m_pSelCard_2;
     m_arrCard[iIdx2] = m_pSelCard;
@@ -199,11 +201,8 @@ void CDack::changeCard()
     
     m_pSelCard->setPosition(vPos2);
     
-    Vec2 vCardPos = getCardPos(m_pSelCard);
-    
     auto action = MoveTo::create(0.12, vCardPos);
     m_pSelCard_2->runAction(action);
-    m_pSelCard_2->setState(CARD_SIZEDOWN);
 }
 
 void CDack::changeCard(CCard *_pCard)
@@ -213,6 +212,39 @@ void CDack::changeCard(CCard *_pCard)
     if(!_pCard)
         return;
     
+    Vec2 vPos = Vec2::ZERO;
+    Vec2 vDack = m_pSelCard->getPosition();
+    
+    vPos.x = m_vDackPos.x + vDack.x;
+    vPos.y = m_vDackPos.y + vDack.y - getPannelSize().y;
+    
+    //위치를 바꾼다
+    _pCard->setPosition(vDack);
+    m_pSelCard->setPosition(vPos);
+    
+    //부모와 이별한다.
+    _pCard->retain();
+    m_pSelCard->retain();
+    _pCard->removeFromParent();
+    m_pSelCard->removeFromParent();
+    m_pBattleDack->subtractCard(_pCard);
+    
+    //부모를 새로 정한다.
+    m_pBattleDack->addChild(m_pSelCard);
+    m_pPannel->addChild(_pCard);
+    _pCard->release();
+    m_pSelCard->release();
+    
+    //정보를 바꾼다
+    int iIdx = m_pSelCard->getIdx();
+    _pCard->setRowCol(iIdx);
+    m_arrCard[iIdx] = _pCard;
+    _pCard->setDack(true);
+    m_pSelCard->setDack(false);
+    
+    m_pBattleDack->setDacktoCard(m_pSelCard);
+    m_pSelCard = nullptr;
+    m_pSelCard_2 = nullptr;
 }
 
 void CDack::resetSelCard()

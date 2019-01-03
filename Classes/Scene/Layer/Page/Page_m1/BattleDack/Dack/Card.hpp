@@ -21,8 +21,8 @@ enum CARD_STATE
     CARD_ENABLE,
     CARD_WAVE_LEFT,
     CARD_WAVE_RIGHT,
-    CARD_SIZEUP,
-    CARD_SIZEDOWN,
+    CARD_SIZE_DOWN,
+    CARD_SIZE_ORIGIN,
     
     CARD_END,
 };
@@ -45,22 +45,28 @@ private:
     float m_fSizeUpScale;
     
     bool m_bLeft;
+    bool m_bDack;
     
     
 public:
     void setRowCol(int _iRow, int _iCol) {m_iRow = _iRow; m_iCol = _iCol;}
     void setState(CARD_STATE _eState);
     void setRowCol(int _iIdx){m_iRow = _iIdx % 4; m_iCol = _iIdx / 4;}
+    void setDack(bool _bIsDack) {m_bDack = _bIsDack;}
     
 public:
     const int getCost() const { return m_iCost; }
     const Vec2& getBeforePos() const { return m_vBeforePos; }
     int getIdx(){return ((m_iCol * 4) + m_iRow);}
+    CBattleDack* getBattleDack(){return m_pBattleDack;}
     
 public:
+    bool isDack() {return m_bDack;}
+    void createCardUse();
     void disable();
     void enable();
     void enableTouch();
+    void returnCard();
     
 private:
     void update(float _fDelta);
@@ -71,9 +77,13 @@ private:
     void cardDisable(float _fDelta);
     void cardEnable(float _fDelta);
     void cardWave(float _fDelta);
-    void cardSizeUp(float _fDelta);
     void cardSizeDown(float _fDelta);
+    void cardSizeOrigin(float _fDelta);
     void cardEnd();
+    
+private:
+    void checkChange(float _fDelta);
+    
     
 protected:
     void initData();

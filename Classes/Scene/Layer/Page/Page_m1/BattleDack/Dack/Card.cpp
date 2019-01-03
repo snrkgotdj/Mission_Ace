@@ -25,7 +25,7 @@ CCard::CCard()
 , m_iOpacity(255)
 , m_fSizeUpScale(1.15)
 , m_bLeft(true)
-
+, m_bDack(false)
 {
     
 }
@@ -86,8 +86,8 @@ void CCard::update(float _fDelta)
     case CARD_ENABLE :              cardEnable(_fDelta);        break;
     case CARD_WAVE_LEFT :           cardWave(_fDelta);          break;
     case CARD_WAVE_RIGHT :          cardWave(_fDelta);          break;
-    case CARD_SIZEUP :              cardSizeUp(_fDelta);        break;
-    case CARD_SIZEDOWN :            cardSizeDown(_fDelta);      break;
+    case CARD_SIZE_DOWN :           cardSizeDown(_fDelta);      break;
+    case CARD_SIZE_ORIGIN :         cardSizeOrigin(_fDelta);    break;
     case CARD_END :                 cardEnd();                  break;
         
     }
@@ -101,6 +101,8 @@ void CCard::setState(CARD_STATE _eState)
     {
         case CARD_WAVE_LEFT:    m_bLeft = true;     this->scheduleUpdate();     break;
         case CARD_WAVE_RIGHT:   m_bLeft = false;    this->scheduleUpdate();     break;
+        case CARD_SIZE_DOWN :                       this->scheduleUpdate();     break;
+        case CARD_END :         this->setScale(1);                              break;
     }
 }
 
@@ -154,34 +156,76 @@ void CCard::cardWave(float _fDelta)
     }
     
     this->setRotation3D(vRot);
-}
-
-void CCard::cardSizeUp(float _fDelta)
-{
-    cardWave(_fDelta);
     
-    float fScale = this->getScale();
-    fScale += _fDelta * 0.5;
-    if(fScale >= m_fSizeUpScale)
-    {
-        fScale = m_fSizeUpScale;
-    }
-    
-    this->setScale(fScale);
+    checkChange(_fDelta);
 }
 
 void CCard::cardSizeDown(float _fDelta)
 {
-    cardWave(_fDelta);
+    float fScale = getScale();
     
-    float fScale = this->getScale();
-    fScale -= _fDelta * 0.5;
-    if(fScale <= 1.0)
+    fScale -= _fDelta;
+    if(fScale <= 0.9)
     {
-        fScale = 1.0;
+        fScale = 0.9;
+    }
+    setScale(fScale);
+}
+
+void CCard::cardSizeOrigin(float _fDelta)
+{
+    float fScale = getScale();
+    
+    fScale += _fDelta;
+    if(fScale >= 1)
+    {
+        fScale = 1;
+        setState(CARD_END);
+    }
+    setScale(fScale);
+}
+
+void CCard::checkChange(float _fDelta)
+{
+    CCard* pCard = m_pBattleDack->getChangeCard();
+    
+    if(nullptr == pCard)
+        return;
+    
+    if(this == pCard)
+        return;
+    
+    CDack* pDack = m_pBattleDack->getDack();
+    
+    Vec2 vDackPos = pDack->getDackPos();
+    Vec2 vPannelSize = pDack->getPannelSize();
+    
+    Rect rect = this->getBoundingBox();
+    if(!pCard->isDack())
+    {
+        rect.origin.x += vDackPos.x;
+        rect.origin.y = vDackPos.y + rect.origin.y - vPannelSize.y + m_pBattleDack->getPosition().y;
     }
     
+    float fScale = this->getScale();
+    if(rect.containsPoint(pCard->getPosition()))
+    {
+        fScale += _fDelta * 0.5;
+        if(fScale >= m_fSizeUpScale)
+        {
+            fScale = m_fSizeUpScale;
+        }
+    }
+    else
+    {
+        fScale -= _fDelta * 0.5;
+        if(fScale <= 1.0)
+        {
+            fScale = 1.0;
+        }
+    }
     this->setScale(fScale);
+    
 }
 
 void CCard::cardEnd()
@@ -239,11 +283,10 @@ void CCard::OnMouseTouch(Event *_event)
     else
     {
         // 전혀 다른데를 클릭했다.
-        m_pBattleDack->renewCardPos();
-        m_pBattleDack->enableCard();
-        _eventDispatcher->pauseEventListenersForTarget(this);
-        ((CSelectScene*)m_pBattleDack->getPage()->getMainLayer()->getScene())->setTouchNext(true);
+        returnCard();
     }
+    
+    m_pBattleDack->setChangeCard(m_pCardSel);
 }
 
 void CCard::OnMouseMove(Event *_event)
@@ -252,40 +295,11 @@ void CCard::OnMouseMove(Event *_event)
         return;
     
     EventMouse* pMouse = (EventMouse*)_event;
-    CDack* pDack = m_pBattleDack->getDack();
     Vec2 vMousePos = Vec2(pMouse->getCursorX(), pMouse->getCursorY());
     Vec2 vMove = m_pCardSel->getPosition() - (m_vBeforePos - vMousePos);
     
     m_pCardSel->setPosition(vMove);
     m_vBeforePos = vMousePos;
-    Rect rect = getBoundingBox();
-    rect.size = rect.size * 2;
-    
-    if(m_pCardSel == this)
-    {
-        if(true == pDack->isMouseOn(m_pCardSel->getPosition()))
-        {
-            pDack->getSelCard()->setState(CARD_SIZEUP);
-        }
-        else
-        {
-            if(nullptr!= pDack->getSelCard())
-                pDack->getSelCard()->setState(CARD_SIZEDOWN);
-        }
-    }
-    
-    else
-    {
-        if(true == pDack->isMouseOnSecond(vMousePos))
-        {
-            pDack->getSelCard2()->setState(CARD_SIZEUP);
-        }
-        else
-        {
-            if(nullptr!= pDack->getSelCard2())
-                pDack->getSelCard2()->setState(CARD_SIZEDOWN);
-        }
-    }
 }
 
 void CCard::OnMouseUp(Event *_event)
@@ -301,11 +315,18 @@ void CCard::OnMouseUp(Event *_event)
     {
         if(true == pDack->isMouseOn(m_pCardSel->getPosition()))
         {
-            
+            // 덱과 카드교체
+            m_pBattleDack->enableCard(pDack->getSelCard());
+            pDack->changeCard(m_pCardSel);
+            m_pCardSel = nullptr;
+            m_pBattleDack->renewCardPos();
+            _eventDispatcher->removeEventListenersForTarget(this);
+            ((CSelectScene*)m_pBattleDack->getPage()->getMainLayer()->getScene())->setTouchNext(true);
         }
         else
         {
-            
+            // 선택 해제
+            returnCard();
         }
     }
     else
@@ -320,4 +341,13 @@ void CCard::OnMouseUp(Event *_event)
         }
     }
     m_pCardSel = nullptr;
+}
+
+void CCard::returnCard()
+{
+    m_pCardSel = nullptr;
+    m_pBattleDack->renewCardPos();
+    m_pBattleDack->enableCard();
+    _eventDispatcher->removeEventListenersForTarget(this);
+    ((CSelectScene*)m_pBattleDack->getPage()->getMainLayer()->getScene())->setTouchNext(true);
 }

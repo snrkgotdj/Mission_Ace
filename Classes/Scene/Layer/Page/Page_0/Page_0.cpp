@@ -28,9 +28,9 @@ bool CPage_0::init(const char* _ImageName, CLayer_Main* _MainLayer)
     if(!CPage::init(_ImageName, _MainLayer))
         return false;
     
-    m_pProfile = CProfile::create();
+    //m_pProfile = CProfile::create();
     
-    this->addChild(m_pProfile);
+    //his->addChild(m_pProfile);
     
     return true;
 }

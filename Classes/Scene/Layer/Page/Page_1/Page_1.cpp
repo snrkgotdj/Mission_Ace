@@ -9,9 +9,11 @@
 #include "TabClan.hpp"
 #include "TabSociety.hpp"
 #include "TabFriend.hpp"
-
+#include "TabButton.hpp"
 
 CPage_1::CPage_1()
+:m_pTabButton(nullptr)
+, m_pCurTab(nullptr)
 {
     m_bVerticalMove = true;
 }
@@ -19,23 +21,6 @@ CPage_1::CPage_1()
 CPage_1::~CPage_1()
 {
     
-}
-
-void CPage_1::setCurTab(CTabBase *_pTab)
-{
-    for(auto& tab : m_vecTabBase)
-    {
-        if(tab != _pTab)
-        {
-            tab->setLocalZOrder(1);
-            tab->setButtonOn(false);
-        }
-        else
-        {
-            tab->setButtonOn(true);
-            tab->setLocalZOrder(2);
-        }
-    }
 }
 
 CPage_1* CPage_1::create(const char* _ImageName, CLayer_Main* _MainLayer)
@@ -59,30 +44,53 @@ bool CPage_1::init(const char* _ImageName, CLayer_Main* _MainLayer)
     if(!CPage::init(_ImageName, _MainLayer))
         return false;
     
+    // 버튼생성
+    m_pTabButton = CTabButton::create(this);
+    this->addChild(m_pTabButton, 3);
+    
+    // 탭 생성
     auto pTabClan = CTabClan::create(this);
     auto pTabSociety = CTabSociety::create(this);
     auto pTabFriend = CTabFriend::create(this);
-    
+
     this->addChild(pTabClan, 2);
     this->addChild(pTabSociety, 1);
     this->addChild(pTabFriend, 1);
-    
+
     m_vecTabBase.pushBack(pTabClan);
     m_vecTabBase.pushBack(pTabSociety);
     m_vecTabBase.pushBack(pTabFriend);
+    
+    m_pTabButton->setTab(BUTTON_CLAN, pTabClan);
+    m_pTabButton->setTab(BUTTON_SOCIETY, pTabSociety);
+    m_pTabButton->setTab(BUTTON_FRIEND, pTabFriend);
+    
+    m_pCurTab = pTabClan;
     
     return true;
 }
 
 void CPage_1::mouseTouch(Event *_event)
 {
-    for(auto& tab : m_vecTabBase)
+    if(m_pTabButton->isMouseOn(_event))
     {
-        if(tab->isTouch(_event))
-        {
-            
-            break;
-        }
+        return;
     }
+    
+    if(m_pCurTab->isTouch(_event))
+    {
+        return;
+    }
+}
+
+void CPage_1::VerticalMove(const Vec2& _vDiff)
+{
+    m_pCurTab->VerticalMove(_vDiff);
+}
+
+void CPage_1::VerticalMoveUp()
+{
+    m_pCurTab->VerticalMoveUp();
+    
 }
 

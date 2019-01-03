@@ -12,16 +12,20 @@
 #include "Page.hpp"
 
 class CTabBase;
+class CTabButton;
 
 using namespace cocos2d;
 class CPage_1 : public CPage
 {
 private:
+    CTabButton* m_pTabButton;
     Vector<CTabBase*> m_vecTabBase;
-    
+    CTabBase* m_pCurTab;
     
 public:
-    void setCurTab(CTabBase* _pTab);
+    void setCurTab(CTabBase* _pTab) {m_pCurTab = _pTab;}
+    virtual void VerticalMove(const Vec2& _vDiff) override;
+    virtual void VerticalMoveUp() override;
     
 public:
     virtual void mouseTouch(Event* _event) override;
@@ -34,6 +38,5 @@ protected:
     CPage_1();
     virtual ~CPage_1();
 };
-
 
 #endif /* Page_1_hpp */

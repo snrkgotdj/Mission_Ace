@@ -18,30 +18,27 @@ class CTabBase : public Layer
 {
 protected:
     CPage_1* m_pPage;
-    Sprite* m_pButton;
-    Sprite* m_pButton_Off;
     Sprite* m_pTab;
     
 protected:
     std::string m_strTab;
-    std::string m_strButton;
-    std::string m_strButton_Off;
     Vec2 m_vButtonPos;
     Vec2 m_vVisibleSize;
     Size m_tTabSize;
     Size m_tButtonSize;
     
-private:
-    void createButton();
-    
+
 public:
-    void setButtonOn(bool _bOn);
+    CPage_1* getPage(){return m_pPage;}
+    void setTabOn();
     
 public:
     bool init(CPage_1* _pPage);
     
     virtual void initData();
     virtual bool isTouch(Event* _event);
+    virtual void VerticalMove(const Vec2& _vDiff) {};
+    virtual void VerticalMoveUp() {};
     
 protected:
     CTabBase();

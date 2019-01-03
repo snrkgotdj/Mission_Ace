@@ -23,7 +23,7 @@ private:
     bool m_bMove;
     
 private:
-    void update(float delta);
+    void update(float delta) override;
     
 public:
     virtual void mouseTouch(Event* _event) override;
