@@ -53,6 +53,7 @@ void CVerticalLayer::update(float _delta)
         this->setPositionY( m_iNextEventY - iBottomY);
         m_bMouseMove = false;
     }
+  
 }
 
 bool CVerticalLayer::init(CPage* _pPage)

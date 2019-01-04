@@ -19,11 +19,11 @@ using namespace cocos2d;
 class CPage_0 : public CPage
 {
 private:
-    CProfile* m_pProfile;
-    CItemBox* m_pItemBox;
+    Vector<CItemBox*> m_vecItem;
     
     
 public:
+    virtual void mouseTouch(Event* _event) override;
     virtual bool init(const char* _ImageName, CLayer_Main* _MainLayer);
     static CPage_0* create(const char* _ImageName, CLayer_Main* _MainLayer);
 private:
