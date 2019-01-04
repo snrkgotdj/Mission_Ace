@@ -21,12 +21,17 @@ private:
     Vec2 m_vMouseDiff;
     bool m_bMouseMove;
     
+private:
+    void update(float _fDelta) override;
+    
 public:
-    virtual void initData();
+    virtual void initData() override;
     virtual bool init(CPage_1* _pPage);
     static CTabClan* create(CPage_1* _pPage);
-    virtual void VerticalMove(const Vec2& _vDiff);
-    virtual void VerticalMoveUp();
+    
+    virtual bool isTouch(Event* _event) override;
+    virtual void VerticalMove(const Vec2& _vDiff) override;
+    virtual void VerticalMoveUp() override;
     
 private:
     CTabClan();

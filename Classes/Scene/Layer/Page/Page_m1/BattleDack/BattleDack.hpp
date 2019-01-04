@@ -18,6 +18,7 @@ using namespace std;
 class CPage_m1;
 class CDack;
 class CCard;
+class CCardUse;
 
 class CBattleDack : public Layer
 {
@@ -68,10 +69,12 @@ private:
     void disableCard(CCard* _except);
     void enableCard(CCard* _pCard = nullptr);
     void moveCard(CCard* _pCard);
+    void lookAtUseCard(CCardUse* _pCard);
     void createCard();
     void createEditor();
     void createCardUse();
     void renewCardPos();
+    
     
 public:
     bool init(CPage_m1* _pPage);

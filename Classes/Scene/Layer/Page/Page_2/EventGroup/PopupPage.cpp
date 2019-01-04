@@ -47,6 +47,9 @@ bool CPopupPage::init(const char *_string, CPage *_pPage)
     setSwallowsTouches(true);
     touch->onTouchBegan = CC_CALLBACK_2(CPopupPage::onTouchBegan, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(touch, this);
+    
+    Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget((Layer*)m_pPage->getMainLayer());
+    ((CSelectScene*)m_pPage->getMainLayer()->getScene())->setTouch(false);
     return true;
 }
 

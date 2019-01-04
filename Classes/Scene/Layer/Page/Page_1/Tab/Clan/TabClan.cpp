@@ -7,6 +7,10 @@
 
 #include "TabClan.hpp"
 #include "ClanLayer.hpp"
+#include "Page_1.hpp"
+#include "Layer_Main.hpp"
+#include "Layer_Select.hpp"
+
 
 CTabClan::CTabClan()
 : m_pClanLayer(nullptr)
@@ -35,8 +39,9 @@ bool CTabClan::init(CPage_1* _pPage)
     this->addChild(head, 3);
     
     m_pClanLayer = CClanLayer::create(this);
-    
     this->addChild(m_pClanLayer, 0);
+    
+    this->scheduleUpdate();
     
     return true;
 }
@@ -67,6 +72,45 @@ CTabClan* CTabClan::create(CPage_1* _pPage)
     }
 }
 
+void CTabClan::update(float _fDelta)
+{
+    if(true == m_bMouseMove)
+        return;
+    
+    const Vec2& vPos = m_pClanLayer->getPosition();
+    const Size& MenuIconSize = m_pPage->getMainLayer()->getSelectLayer()->getCurIconSize();
+    int iHeight = m_pClanLayer->getHeight();
+    const Vec2& vStart = m_pClanLayer->getStartPos();
+    const Vec2& vSize = m_pClanLayer->getClanSize();
+    int iBottom = MenuIconSize.height + vSize.y - vStart.y + iHeight;
+    
+    if(vPos.y < 0)
+    {
+        m_pClanLayer->stopAllActions();
+        m_pClanLayer->setPositionY(0);
+        m_bMouseMove = false;
+    }
+    
+    else if(vPos.y > iBottom)
+    {
+        m_pClanLayer->stopAllActions();
+        m_pClanLayer->setPositionY(iBottom);
+        m_bMouseMove = false;
+    }
+}
+
+bool CTabClan::isTouch(Event *_event)
+{
+    if(false == CTabBase::isTouch(_event))
+        return false;
+    
+    m_pClanLayer->isTouch(_event);
+    
+    
+    return true;
+}
+
+
 void CTabClan::VerticalMove(const Vec2& _vDiff)
 {
     m_pClanLayer->setPositionY(m_pClanLayer->getPositionY() + _vDiff.y);
@@ -75,13 +119,6 @@ void CTabClan::VerticalMove(const Vec2& _vDiff)
 }
 void CTabClan::VerticalMoveUp()
 {
-    if(!m_bMouseMove)
-    {
-        m_bMouseMove = false;
-        m_vMouseDiff = Vec2::ZERO;
-        return;
-    }
-
     const Vec2& vPos = m_pClanLayer->getPosition();
     ActionInterval* action = nullptr;
     
@@ -92,9 +129,22 @@ void CTabClan::VerticalMoveUp()
     
     else
     {
+        int iHeight = m_pClanLayer->getHeight();
+        const Vec2& vStart = m_pClanLayer->getStartPos();
+        const Size& MenuIconSize = m_pPage->getMainLayer()->getSelectLayer()->getCurIconSize();
+        const Vec2& vSize = m_pClanLayer->getClanSize();
+        int iBottom = MenuIconSize.height + vSize.y - vStart.y + iHeight;
         
+        if(vPos.y > iBottom)
+        {
+            action = EaseOut::create(MoveTo::create(0.7f, Vec2( vPos.x, iBottom)), 7);
+        }
         
-        action = EaseOut::create(MoveBy::create(0.7f, Vec2( 0, m_vMouseDiff.y * 30)), 7);
+        else
+        {
+            action = EaseOut::create(MoveBy::create(0.7f, Vec2( 0, m_vMouseDiff.y * 30)), 7);
+            m_bMouseMove = false;
+        }
     }
     
     

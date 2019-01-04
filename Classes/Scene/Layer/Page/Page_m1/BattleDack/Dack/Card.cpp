@@ -235,7 +235,6 @@ void CCard::cardEnd()
     unscheduleUpdate();
 }
 
-
 void CCard::disable()
 {
     m_iOpacity = 255;

@@ -86,8 +86,6 @@ void CEventIcon::upMouse()
     CPage* pPage = m_pEventGroup->getLayer()->getPage();
     Label* pLabel = (Label*)getChildByTag(0);
     CPopupPage::create(pLabel->getString().c_str(), pPage);
-    Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget((Layer*)pPage->getMainLayer());
-    ((CSelectScene*)pPage->getMainLayer()->getScene())->setTouch(false);
 }
 
 void CEventIcon::initData()

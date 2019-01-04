@@ -203,8 +203,26 @@ void CBattleDack::OnMouseUp(Event *_event)
 void CBattleDack::createCardUse()
 {
     auto cardUse = CCardUse::create(m_pSelCard);
-    
     this->addChild(cardUse);
+    
+    lookAtUseCard(cardUse);
+}
+
+void CBattleDack::lookAtUseCard(CCardUse* _pCard)
+{
+    Vec2 vCardUsePos = _pCard->getPosition();
+    Vec2 vCardUseSize = _pCard->getContentSize();
+    Vec2 vPos = this->getPosition();
+    Vec2 vIconSize = m_pPage->getMainLayer()->getSelectLayer()->getCurIconSize();
+    
+    int iHeight = vIconSize.y + vCardUseSize.y * 0.7 - vCardUsePos.y;
+    
+    if(vPos.y < iHeight)
+    {
+        auto action = EaseOut::create(MoveTo::create(1.f, Vec2( vPos.x, iHeight)), 5);
+        this->runAction(action);
+    }
+    
 }
 
 

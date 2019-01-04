@@ -37,6 +37,7 @@ public:
     
     virtual void initData();
     virtual bool isTouch(Event* _event);
+    
     virtual void VerticalMove(const Vec2& _vDiff) {};
     virtual void VerticalMoveUp() {};
     

@@ -93,6 +93,8 @@
 		1356EAEA21CA3E0600746E03 /* Neco_Main.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1356EAE821CA3E0600746E03 /* Neco_Main.jpeg */; };
 		1356EAED21CA404500746E03 /* Layer_Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1356EAEB21CA404500746E03 /* Layer_Main.cpp */; };
 		1356EAEE21CA404500746E03 /* Layer_Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1356EAEB21CA404500746E03 /* Layer_Main.cpp */; };
+		1365F50921DEE15D000023B5 /* Clan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1365F50721DEE15D000023B5 /* Clan.cpp */; };
+		1365F50A21DEE15D000023B5 /* Clan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1365F50721DEE15D000023B5 /* Clan.cpp */; };
 		1375B2BF21D5E02A00744AF6 /* Page_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1375B2BD21D5E02A00744AF6 /* Page_1.cpp */; };
 		1375B2C021D5E4F800744AF6 /* Page_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1375B2BD21D5E02A00744AF6 /* Page_1.cpp */; };
 		1375B2C421D5E77A00744AF6 /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 1375B2C121D5E77A00744AF6 /* Book.png */; };
@@ -295,6 +297,8 @@
 		1356EAE821CA3E0600746E03 /* Neco_Main.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neco_Main.jpeg; sourceTree = "<group>"; };
 		1356EAEB21CA404500746E03 /* Layer_Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Layer_Main.cpp; sourceTree = "<group>"; };
 		1356EAEC21CA404500746E03 /* Layer_Main.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Layer_Main.hpp; sourceTree = "<group>"; };
+		1365F50721DEE15D000023B5 /* Clan.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Clan.cpp; sourceTree = "<group>"; };
+		1365F50821DEE15D000023B5 /* Clan.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Clan.hpp; sourceTree = "<group>"; };
 		1375B2BD21D5E02A00744AF6 /* Page_1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Page_1.cpp; sourceTree = "<group>"; };
 		1375B2BE21D5E02A00744AF6 /* Page_1.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Page_1.hpp; sourceTree = "<group>"; };
 		1375B2C121D5E77A00744AF6 /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book.png; sourceTree = "<group>"; };
@@ -531,6 +535,8 @@
 				1375B2CE21D5EF2300744AF6 /* TabClan.hpp */,
 				132EEA1121DDFE70001CC64E /* ClanLayer.cpp */,
 				132EEA1221DDFE70001CC64E /* ClanLayer.hpp */,
+				1365F50721DEE15D000023B5 /* Clan.cpp */,
+				1365F50821DEE15D000023B5 /* Clan.hpp */,
 			);
 			path = Clan;
 			sourceTree = "<group>";
@@ -1062,6 +1068,7 @@
 				46880B8A19C43A87006E1F66 /* SelectScene.cpp in Sources */,
 				13323F5A21D3786E0062BA01 /* VerticalLayer.cpp in Sources */,
 				132CB4A321D6279D00267FA4 /* Dack.cpp in Sources */,
+				1365F50921DEE15D000023B5 /* Clan.cpp in Sources */,
 				13285C3221CB57FE005B8214 /* Layer_Select.cpp in Sources */,
 				1375B2D821D5EF8000744AF6 /* TabFriend.cpp in Sources */,
 				1399564C21D474E4004DE14E /* EventIcon.cpp in Sources */,
@@ -1095,6 +1102,7 @@
 				132278E921D0D3420047B6B8 /* Page_0.cpp in Sources */,
 				1399564E21D47C21004DE14E /* EventIcon.cpp in Sources */,
 				13323F5B21D3786E0062BA01 /* VerticalLayer.cpp in Sources */,
+				1365F50A21DEE15D000023B5 /* Clan.cpp in Sources */,
 				1399566E21D5BD88004DE14E /* EventGroup_01.cpp in Sources */,
 				132EEA0C21DDE15A001CC64E /* TabButton.cpp in Sources */,
 				1375B2DD21D5EF8E00744AF6 /* TabBase.cpp in Sources */,
