@@ -64,7 +64,7 @@ bool CVerticalLayer::init(CPage* _pPage)
     m_pPage = _pPage;
     m_vVisibleSize = Director::getInstance()->getVisibleSize();
     
-    auto pLabel_Plus = Label::createWithSystemFont("+", "Thonburi", 100);
+    auto pLabel_Plus = Label::createWithSystemFont("+", "Thonburi", m_vVisibleSize.x * 0.25);
     auto PlusItem = MenuItemLabel::create(pLabel_Plus, CC_CALLBACK_1(CVerticalLayer::plusEventGroup, this));
     Menu* pMenu = Menu::create(PlusItem, nullptr);
     pMenu->setPosition(Vec2(m_vVisibleSize.x - 30, m_vVisibleSize.y -10));

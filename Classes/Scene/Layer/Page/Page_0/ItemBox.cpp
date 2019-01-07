@@ -52,7 +52,7 @@ CItemBox* CItemBox::create(const string& _strImage)
 
 void CItemBox::update(float _fDelta)
 {
-    switch(m_eState)
+    switch((int)m_eState)
     {
         case ITEM_DOWN:
             itemDown(_fDelta);
@@ -60,6 +60,9 @@ void CItemBox::update(float _fDelta)
             
         case ITEM_ORIGIN:
             itemOrigin(_fDelta);
+            break;
+            
+        default:
             break;
     }
 }

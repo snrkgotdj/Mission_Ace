@@ -49,7 +49,7 @@ bool CEventGroup::init(const char* _strSprite, const char* _LabelName, CVertical
     m_pTitle->setPosition(Vec2(m_vVisibleSize.x * 0.5, m_iTitlePosY));
     
     //타이틀에 이름넣기
-    Label* pLabel = Label::createWithSystemFont(m_strLabel, "Thonburi", 50);
+    Label* pLabel = Label::createWithSystemFont(m_strLabel, "Thonburi", m_vVisibleSize.x * 0.125);
     pLabel->setPosition(m_vLabelPos);
     pLabel->setColor(Color3B::WHITE);
     
@@ -57,7 +57,7 @@ bool CEventGroup::init(const char* _strSprite, const char* _LabelName, CVertical
     addChild(m_pTitle);
     
     // 더하기 만들기
-    auto pLabel_Plus = Label::createWithSystemFont("+", "Thonburi", 50);
+    auto pLabel_Plus = Label::createWithSystemFont("+", "Thonburi",  m_vVisibleSize.x * 0.125);
     auto PlusItem = MenuItemLabel::create(pLabel_Plus, CC_CALLBACK_1(CEventGroup::ItemCreate, this));
     Menu* pMenu = Menu::create(PlusItem, nullptr);
     pMenu->setPosition(m_vPlusPos);
@@ -99,7 +99,7 @@ void CEventGroup::ItemCreate(Ref* _sender)
     char str[255] = {};
     sprintf(str, "event_%d", (int)m_listIcon.size() + 1);
     
-    Label* pLabel = Label::createWithSystemFont(str, "Thonburi", 50);
+    Label* pLabel = Label::createWithSystemFont(str, "Thonburi",  m_vVisibleSize.x * 0.125);
     pLabel->setPosition(m_vItemLabelPos);
     pLabel->setColor(Color3B::WHITE);
     pLabel->setTag(0);

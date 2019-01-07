@@ -22,6 +22,7 @@ CCard::CCard()
 , m_iRow(-1)
 , m_iCol(-1)
 , m_eCardState(CARD_END)
+, m_vVisible(Vec2::ZERO)
 , m_iOpacity(255)
 , m_fSizeUpScale(1.15)
 , m_bLeft(true)
@@ -37,8 +38,9 @@ CCard::~CCard()
 
 void CCard::initData()
 {
-    m_tSize = Size(120, 160);
+    m_vVisible = Director::getInstance()->getVisibleSize();
     
+    m_tSize = Size(m_vVisible.x * 0.18, m_vVisible.x * 0.25);
     m_iCost = random(1, 9);
     
     char str[25] = {};
@@ -86,8 +88,10 @@ void CCard::update(float _fDelta)
     case CARD_ENABLE :              cardEnable(_fDelta);        break;
     case CARD_WAVE_LEFT :           cardWave(_fDelta);          break;
     case CARD_WAVE_RIGHT :          cardWave(_fDelta);          break;
+    case CARD_SIZE_DOWN_WAVE:       cardWave(_fDelta);
     case CARD_SIZE_DOWN :           cardSizeDown(_fDelta);      break;
     case CARD_SIZE_ORIGIN :         cardSizeOrigin(_fDelta);    break;
+    case CARD_SIZE_ORIGIN_WAVE:     cardSizeOriginWave(_fDelta);break;
     case CARD_END :                 cardEnd();                  break;
         
     }
@@ -101,7 +105,8 @@ void CCard::setState(CARD_STATE _eState)
     {
         case CARD_WAVE_LEFT:    m_bLeft = true;     this->scheduleUpdate();     break;
         case CARD_WAVE_RIGHT:   m_bLeft = false;    this->scheduleUpdate();     break;
-        case CARD_SIZE_DOWN :                       this->scheduleUpdate();     break;
+        case CARD_SIZE_DOWN_WAVE:
+        case CARD_SIZE_DOWN:                        this->scheduleUpdate();     break;
         case CARD_END :         this->setScale(1);                              break;
     }
 }
@@ -156,7 +161,6 @@ void CCard::cardWave(float _fDelta)
     }
     
     this->setRotation3D(vRot);
-    
     checkChange(_fDelta);
 }
 
@@ -183,6 +187,21 @@ void CCard::cardSizeOrigin(float _fDelta)
         setState(CARD_END);
     }
     setScale(fScale);
+}
+
+void CCard::cardSizeOriginWave(float _fDelta)
+{
+    float fScale = getScale();
+    
+    fScale += _fDelta;
+    if(fScale >= 1)
+    {
+        fScale = 1;
+        m_eCardState = CARD_WAVE_RIGHT;
+    }
+    setScale(fScale);
+    
+    cardWave(_fDelta);
 }
 
 void CCard::checkChange(float _fDelta)
@@ -225,7 +244,6 @@ void CCard::checkChange(float _fDelta)
         }
     }
     this->setScale(fScale);
-    
 }
 
 void CCard::cardEnd()
@@ -272,7 +290,7 @@ void CCard::OnMouseTouch(Event *_event)
     {
         // 덱의 카드를 클릭했다
         m_pCardSel = pDack->getSelCard();
-        
+        m_pCardSel->setState(CARD_SIZE_DOWN_WAVE);
     }
     
     else if(rect.containsPoint(vMousePos))
@@ -293,6 +311,10 @@ void CCard::OnMouseMove(Event *_event)
 {
     if(nullptr == m_pCardSel)
         return;
+    
+    CDack* pDack = m_pBattleDack->getDack();
+    if(m_pCardSel == pDack->getSelCard())
+        m_pCardSel->setState(CARD_SIZE_ORIGIN_WAVE);
     
     EventMouse* pMouse = (EventMouse*)_event;
     Vec2 vMousePos = Vec2(pMouse->getCursorX(), pMouse->getCursorY());
@@ -326,7 +348,7 @@ void CCard::OnMouseUp(Event *_event)
         else
         {
             // 선택 해제
-            returnCard();
+            returnCard(false);
         }
     }
     else
@@ -365,5 +387,4 @@ void CCard::returnCard(bool _bNext)
     
     else
         ((CSelectScene*)m_pBattleDack->getPage()->getMainLayer()->getScene())->setTouch(true);
-    
 }

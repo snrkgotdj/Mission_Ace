@@ -32,8 +32,10 @@ bool CLayer_Select::init(CLayer_Main* _MainLayer)
     m_tVisibleSize = Director::getInstance()->getVisibleSize();
     m_pLayer_Main = _MainLayer;
     
-    createSelect();
+    m_tSelectSize = Vec2(m_tVisibleSize.width * 0.17, m_tVisibleSize.width * 0.17);
+    m_tCurSelectSize = Vec2(m_tVisibleSize.width * 0.25, m_tVisibleSize.width * 0.25);
     
+    createSelect();
     createPannel();
     
     this->setPosition(Vec2(m_tVisibleSize.width * 0.5, 0));

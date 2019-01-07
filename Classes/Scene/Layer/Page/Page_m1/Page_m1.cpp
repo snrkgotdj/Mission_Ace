@@ -102,7 +102,7 @@ void CPage_m1::VerticalMoveUp()
     ActionInterval* action = nullptr;
     
     if(vPos.y < 0)
-    { 
+    {
         action = EaseOut::create(MoveTo::create(0.7f, Vec2( vPos.x, 0)), 7);
     }
     

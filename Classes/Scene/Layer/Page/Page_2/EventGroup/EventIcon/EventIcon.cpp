@@ -131,6 +131,8 @@ void CEventIcon::iconScaleUp(float _fDelta)
 
 void CEventIcon::createItem(const char* _strSprite, Vec2 _vPos, int _iData)
 {
+    const Size& size = Director::getInstance()->getVisibleSize();
+    
     Sprite* sprite = Sprite::create(_strSprite);
     sprite->setScale(0.9);
     sprite->setPosition(_vPos);
@@ -142,7 +144,7 @@ void CEventIcon::createItem(const char* _strSprite, Vec2 _vPos, int _iData)
     
     char str[50] = {};
     sprintf(str, "%d", iData);
-    Label* pLabel = Label::createWithSystemFont(str, "Thonburi", 20);
+    Label* pLabel = Label::createWithSystemFont(str, "Thonburi",  size.width * 0.04);
     pLabel->setAnchorPoint(Vec2(0.f, 0.5f));
     pLabel->setPosition(Vec2(sprite->getContentSize().width, sprite->getContentSize().height * 0.5));
     
@@ -151,6 +153,7 @@ void CEventIcon::createItem(const char* _strSprite, Vec2 _vPos, int _iData)
 
 void CEventIcon::createCrystal(const char* _strSprite, Vec2 _vPos, int _iData)
 {
+    const Size& size = Director::getInstance()->getVisibleSize();
     Sprite* sprite = Sprite::create(_strSprite);
     sprite->setAnchorPoint(Vec2(1.f, 0.5f));
     sprite->setScale(0.9);
@@ -161,7 +164,7 @@ void CEventIcon::createCrystal(const char* _strSprite, Vec2 _vPos, int _iData)
     
     char str[50] = {};
     sprintf(str, "%d", iData);
-    Label* pLabel = Label::createWithSystemFont(str, "Thonburi", 20);
+    Label* pLabel = Label::createWithSystemFont(str, "Thonburi", size.width * 0.04);
     pLabel->setAnchorPoint(Vec2(1.f, 0.5f));
     pLabel->setPosition(Vec2(0, sprite->getContentSize().height * 0.5));
     

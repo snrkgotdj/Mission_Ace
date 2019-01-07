@@ -22,7 +22,9 @@ enum CARD_STATE
     CARD_WAVE_LEFT,
     CARD_WAVE_RIGHT,
     CARD_SIZE_DOWN,
+    CARD_SIZE_DOWN_WAVE,
     CARD_SIZE_ORIGIN,
+    CARD_SIZE_ORIGIN_WAVE,
     
     CARD_END,
 };
@@ -36,6 +38,7 @@ private:
     
 private:
     CARD_STATE m_eCardState;
+    Vec2 m_vVisible;
     Vec2 m_vBeforePos;
     Size m_tSize;
     int m_iCost;
@@ -67,7 +70,7 @@ public:
     void disable();
     void enable();
     void enableTouch();
-    void returnCard(bool _bNext = true);
+    void returnCard(bool _bNext = false);
     
 private:
     void update(float _fDelta);
@@ -80,6 +83,7 @@ private:
     void cardWave(float _fDelta);
     void cardSizeDown(float _fDelta);
     void cardSizeOrigin(float _fDelta);
+    void cardSizeOriginWave(float _fDelta);
     void cardEnd();
     
 private:

@@ -37,6 +37,7 @@ bool CPage_0::init(const char* _ImageName, CLayer_Main* _MainLayer)
     vPos.x = vVisible.x * 0.5;
     
     auto profileMid = CItemBox::create("Profile_Mid.png");
+    Vec2 vTest = profileMid->getContentSize();
     profileMid->setContentSize(Size(vVisible.x * 0.7, vVisible.x * 0.1));
     profileMid->setPosition(vPos);
     

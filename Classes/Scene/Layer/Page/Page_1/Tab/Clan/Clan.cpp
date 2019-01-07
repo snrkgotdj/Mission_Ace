@@ -115,13 +115,14 @@ void CClan::setState(CLAN_STATE _eState)
         
         auto popup = CPopupPage::create(m_strLabelName.c_str(), pPage);
         
-        popup->setZOrder(10);
+        popup->setLocalZOrder(10);
     }
 }
 
 Label* CClan::setLabel(const string& _strLabel, const Vec2& _vPos)
 {
-    auto label = Label::createWithSystemFont(_strLabel, "Thonburi", 30);
+    const Size& size = Director::getInstance()->getVisibleSize();
+    auto label = Label::createWithSystemFont(_strLabel, "Thonburi", size.width * 0.05);
     m_strLabelName = _strLabel;
     
     label->setAnchorPoint(Vec2(0, 0.5));

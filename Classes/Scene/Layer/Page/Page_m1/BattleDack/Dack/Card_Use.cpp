@@ -81,8 +81,6 @@ void CCardUse::update(float _fDelta)
             buttonScaleOrigin(_fDelta);
             break;
     }
-    
-    
 }
 
 void CCardUse::OnMouseTouch(Event *_event)

@@ -92,7 +92,7 @@ void CDack::createCard()
         
         vCardSize = pCard->getContentSize();
         
-        m_vCardPad.x = (vVisibleSize.x - vCardSize.x * 4 - m_vDackPos.x * 2) * 0.25;
+        m_vCardPad.x = (vVisibleSize.x - vCardSize.x * 4 - m_vDackPos.x * 2) * 0.2;
         m_vCardPad.y = m_vCardPad.x * 2;
         
         int iRow = i % 4;

@@ -29,10 +29,10 @@ bool CPopupPage::init(const char *_string, CPage *_pPage)
     const Size& vSize = Director::getInstance()->getVisibleSize();
     
     Sprite* pSprite = Sprite::create("Pannel.png");
-    pSprite->setContentSize(Size(500, 500));
+    pSprite->setContentSize(Size(vSize.width * 0.5, vSize.width * 0.5));
     pSprite->setPosition(Size(vSize * 0.5));
     
-    Label* pLabel = Label::createWithSystemFont(_string, "Thonburi", 100);
+    Label* pLabel = Label::createWithSystemFont(_string, "Thonburi", vSize.width * 0.1);
     pLabel->setColor(Color3B::BLACK);
     pLabel->setPosition(Vec2(pSprite->getContentSize() * 0.5));
     
@@ -44,7 +44,6 @@ bool CPopupPage::init(const char *_string, CPage *_pPage)
     m_pPage = _pPage;
     
     auto touch = EventListenerTouchOneByOne::create();
-    setSwallowsTouches(true);
     touch->onTouchBegan = CC_CALLBACK_2(CPopupPage::onTouchBegan, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(touch, this);
     
@@ -75,7 +74,7 @@ bool CPopupPage::onTouchBegan(Touch* touch, Event* event)
     
     if(rect.containsPoint(touch->getLocation()))
     {
-        int a = 0;
+        
     }
     else
     {

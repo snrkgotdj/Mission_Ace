@@ -90,7 +90,7 @@ void CBattleDack::createCard()
         m_listCard.push_back(pCard);
     }
     m_vCardSize = pCard->getContentSize();
-    m_vCardPad.x = (vVisibleSize.x - m_vCardSize.x * 4 - vDackPos.x * 2) * 0.25;
+    m_vCardPad.x = (vVisibleSize.x - m_vCardSize.x * 4 - vDackPos.x * 2) * 0.2;
     m_vCardPad.y = m_vCardPad.x * 2;
     
     vDackPos.x += 10 + m_vCardSize.x * 0.5;
@@ -104,8 +104,8 @@ void CBattleDack::createEditor()
 {
     const Vec2& vVisible = Director::getInstance()->getVisibleSize();
     
-    auto pLabel_Plus_1 = Label::createWithSystemFont("+1", "Thonburi", 50);
-    auto pLabel_Plus_3 = Label::createWithSystemFont("+3", "Thonburi", 50);
+    auto pLabel_Plus_1 = Label::createWithSystemFont("+1", "Thonburi", vVisible.x * 0.1);
+    auto pLabel_Plus_3 = Label::createWithSystemFont("+3", "Thonburi", vVisible.x * 0.1);
     
     auto PlusItem_1 = MenuItemLabel::create(pLabel_Plus_1, CC_CALLBACK_1(CBattleDack::plusCard_1, this));
     auto PlusItem_3 = MenuItemLabel::create(pLabel_Plus_3, CC_CALLBACK_1(CBattleDack::plusCard_3, this));
