@@ -153,7 +153,8 @@ void CBattleDack::mouseTouch(Event *_event)
 {
     if(m_pDack->isMouseOn(_event))
     {
-        // 댁 클릭 옵션
+        m_pSelCard = m_pDack->getSelCard();
+        m_pSelCard->setState(CARD_SIZE_DOWN);
         return;
     }
     
@@ -181,6 +182,13 @@ void CBattleDack::OnMouseMove(Event *_event)
     if(nullptr == m_pSelCard)
         return;
     
+    if(m_pSelCard == m_pDack->getSelCard())
+    {
+        m_pSelCard->setState(CARD_SIZE_ORIGIN);
+        m_pSelCard = nullptr;
+        return;
+    }
+    
     m_pSelCard->setState(CARD_SIZE_ORIGIN);
     m_pSelCard = nullptr;
 }
@@ -193,6 +201,13 @@ void CBattleDack::OnMouseUp(Event *_event)
     if(nullptr == m_pSelCard)
         return;
     
+    if(m_pSelCard == m_pDack->getSelCard())
+    {
+        m_pSelCard->setState(CARD_SIZE_ORIGIN);
+        m_pSelCard = nullptr;
+        return;
+    }
+    
     m_pSelCard->setState(CARD_SIZE_ORIGIN);
     createCardUse();
     ((CSelectScene*)m_pPage->getMainLayer()->getScene())->setTouch(false);
@@ -203,6 +218,7 @@ void CBattleDack::OnMouseUp(Event *_event)
 void CBattleDack::createCardUse()
 {
     auto cardUse = CCardUse::create(m_pSelCard);
+    m_pSelCard->setOpacity(255);
     this->addChild(cardUse);
     
     lookAtUseCard(cardUse);
@@ -215,12 +231,14 @@ void CBattleDack::lookAtUseCard(CCardUse* _pCard)
     Vec2 vPos = this->getPosition();
     Vec2 vIconSize = m_pPage->getMainLayer()->getSelectLayer()->getCurIconSize();
     
+    
     int iHeight = vIconSize.y + vCardUseSize.y * 0.7 - vCardUsePos.y;
     
     if(vPos.y < iHeight)
     {
         auto action = EaseOut::create(MoveTo::create(1.f, Vec2( vPos.x, iHeight)), 5);
         this->runAction(action);
+        m_pPage->setUseCard(true);
     }
     
 }
@@ -248,6 +266,7 @@ void CBattleDack::enableCard(CCard* _pCard)
     
     m_pDack->stopCard();
     ((CSelectScene*)m_pPage->getMainLayer()->getScene())->setTouch(false);
+    m_pPage->setMove(false);
 }
 
 void CBattleDack::moveCard(CCard* _pCard)

@@ -103,6 +103,10 @@ void CSelectScene::setTouch(bool _bTouch)
     {
         Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(m_pMainLayer);
     }
+    else
+    {
+        Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(m_pMainLayer);
+    }
 }
 
 void CSelectScene::setTouchNext(bool _bTrue)

@@ -46,6 +46,7 @@ private:
     
     bool m_bLeft;
     bool m_bDack;
+    bool m_bMove;
     
     
 public:
@@ -66,7 +67,7 @@ public:
     void disable();
     void enable();
     void enableTouch();
-    void returnCard();
+    void returnCard(bool _bNext = true);
     
 private:
     void update(float _fDelta);

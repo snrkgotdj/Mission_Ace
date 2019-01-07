@@ -109,7 +109,7 @@ void CCardUse::OnMouseUp(Event *_event)
     CBattleDack* pBattleDack = m_pCard->getBattleDack();
     if(m_eState != USE_SCALE_DOWN)
     {
-        m_pCard->returnCard();
+        m_pCard->returnCard(false);
     }
     
     else

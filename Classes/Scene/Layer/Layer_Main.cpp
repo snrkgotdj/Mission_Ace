@@ -74,7 +74,7 @@ bool CLayer_Main::Touched(Event* _event)
     EventMouse* Mouse = (EventMouse*)_event;
     m_vOldMousePos.x = Mouse->getCursorX();
     m_vOldMousePos.y = Mouse->getCursorY();
-    m_vFirstMousePos = Vec2(Mouse->getCursorX(), Mouse->getCursorY());
+    m_vFirstMousePos = m_vOldMousePos;
     
     for(int i = 0; i < m_vecPage.size(); ++i)
     {
@@ -95,7 +95,15 @@ void CLayer_Main::OnMouseMove(Event* _event)
     
     EventMouse* Mouse = (EventMouse*)_event;
     Vec2 vMousePos = Vec2(Mouse->getCursorX(), Mouse->getCursorY());
-    Vec2 vDiff = vMousePos - m_vOldMousePos;
+    Vec2 vDiff = vMousePos - m_vFirstMousePos;
+    
+    float iLength = vDiff.length();
+    if(iLength < 20)
+    {
+        m_vOldMousePos = vMousePos;
+        return;
+    }
+    
     
     //최초 한번 마우스 체크
     if(false == m_bMouseCheckOnce)
@@ -114,6 +122,8 @@ void CLayer_Main::OnMouseMove(Event* _event)
             }
         }
     }
+    
+    vDiff = vMousePos - m_vOldMousePos;
     
     if(m_bCheckVertical)
     {

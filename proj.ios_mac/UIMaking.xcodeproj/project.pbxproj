@@ -27,6 +27,22 @@
 		13285C2F21CB573F005B8214 /* Neco_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13285C2D21CB573F005B8214 /* Neco_4.jpg */; };
 		13285C3221CB57FE005B8214 /* Layer_Select.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13285C3021CB57FE005B8214 /* Layer_Select.cpp */; };
 		13285C3321CB57FE005B8214 /* Layer_Select.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13285C3021CB57FE005B8214 /* Layer_Select.cpp */; };
+		132AADA021E2D53A00E81F50 /* TV.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9721E2D53900E81F50 /* TV.png */; };
+		132AADA121E2D53A00E81F50 /* TV.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9721E2D53900E81F50 /* TV.png */; };
+		132AADA221E2D53A00E81F50 /* CrownBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9921E2D53900E81F50 /* CrownBox.png */; };
+		132AADA321E2D53A00E81F50 /* CrownBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9921E2D53900E81F50 /* CrownBox.png */; };
+		132AADA421E2D53A00E81F50 /* Paper.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9A21E2D53A00E81F50 /* Paper.png */; };
+		132AADA521E2D53A00E81F50 /* Paper.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9A21E2D53A00E81F50 /* Paper.png */; };
+		132AADA621E2D53A00E81F50 /* Quest.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9B21E2D53A00E81F50 /* Quest.png */; };
+		132AADA721E2D53A00E81F50 /* Quest.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9B21E2D53A00E81F50 /* Quest.png */; };
+		132AADA821E2D53A00E81F50 /* Battle.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9C21E2D53A00E81F50 /* Battle.png */; };
+		132AADA921E2D53A00E81F50 /* Battle.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9C21E2D53A00E81F50 /* Battle.png */; };
+		132AADAA21E2D53A00E81F50 /* Trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9D21E2D53A00E81F50 /* Trophy.png */; };
+		132AADAB21E2D53A00E81F50 /* Trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9D21E2D53A00E81F50 /* Trophy.png */; };
+		132AADAC21E2D53A00E81F50 /* Earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9E21E2D53A00E81F50 /* Earth.png */; };
+		132AADAD21E2D53A00E81F50 /* Earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9E21E2D53A00E81F50 /* Earth.png */; };
+		132AADAE21E2D53A00E81F50 /* 2v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9F21E2D53A00E81F50 /* 2v2.png */; };
+		132AADAF21E2D53A00E81F50 /* 2v2.png in Resources */ = {isa = PBXBuildFile; fileRef = 132AAD9F21E2D53A00E81F50 /* 2v2.png */; };
 		132CB49521D6215700267FA4 /* Page_m1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132CB49321D6215700267FA4 /* Page_m1.cpp */; };
 		132CB49621D6227400267FA4 /* Page_m1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132CB49321D6215700267FA4 /* Page_m1.cpp */; };
 		132CB49A21D6232700267FA4 /* BattleDack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132CB49821D6232700267FA4 /* BattleDack.cpp */; };
@@ -251,6 +267,14 @@
 		13285C2D21CB573F005B8214 /* Neco_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Neco_4.jpg; sourceTree = "<group>"; };
 		13285C3021CB57FE005B8214 /* Layer_Select.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Layer_Select.cpp; sourceTree = "<group>"; };
 		13285C3121CB57FE005B8214 /* Layer_Select.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Layer_Select.hpp; sourceTree = "<group>"; };
+		132AAD9721E2D53900E81F50 /* TV.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TV.png; sourceTree = "<group>"; };
+		132AAD9921E2D53900E81F50 /* CrownBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CrownBox.png; sourceTree = "<group>"; };
+		132AAD9A21E2D53A00E81F50 /* Paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Paper.png; sourceTree = "<group>"; };
+		132AAD9B21E2D53A00E81F50 /* Quest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quest.png; sourceTree = "<group>"; };
+		132AAD9C21E2D53A00E81F50 /* Battle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Battle.png; sourceTree = "<group>"; };
+		132AAD9D21E2D53A00E81F50 /* Trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trophy.png; sourceTree = "<group>"; };
+		132AAD9E21E2D53A00E81F50 /* Earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Earth.png; sourceTree = "<group>"; };
+		132AAD9F21E2D53A00E81F50 /* 2v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2v2.png; sourceTree = "<group>"; };
 		132CB49321D6215700267FA4 /* Page_m1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Page_m1.cpp; sourceTree = "<group>"; };
 		132CB49421D6215700267FA4 /* Page_m1.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Page_m1.hpp; sourceTree = "<group>"; };
 		132CB49821D6232700267FA4 /* BattleDack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleDack.cpp; sourceTree = "<group>"; };
@@ -562,6 +586,14 @@
 		13323F2A21D304C90062BA01 /* Page_00 */ = {
 			isa = PBXGroup;
 			children = (
+				132AAD9F21E2D53A00E81F50 /* 2v2.png */,
+				132AAD9C21E2D53A00E81F50 /* Battle.png */,
+				132AAD9921E2D53900E81F50 /* CrownBox.png */,
+				132AAD9E21E2D53A00E81F50 /* Earth.png */,
+				132AAD9A21E2D53A00E81F50 /* Paper.png */,
+				132AAD9B21E2D53A00E81F50 /* Quest.png */,
+				132AAD9D21E2D53A00E81F50 /* Trophy.png */,
+				132AAD9721E2D53900E81F50 /* TV.png */,
 				13323F4121D317750062BA01 /* ItemBox.png */,
 				13323F3521D306460062BA01 /* Profile_Setting.png */,
 				13323F3221D306420062BA01 /* Profile_Button.png */,
@@ -941,6 +973,8 @@
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
 				13285C2E21CB573F005B8214 /* Neco_4.jpg in Resources */,
 				1375B2E421D6061800744AF6 /* Clan_On.png in Resources */,
+				132AADAC21E2D53A00E81F50 /* Earth.png in Resources */,
+				132AADAA21E2D53A00E81F50 /* Trophy.png in Resources */,
 				13323F3621D306470062BA01 /* Profile_Setting.png in Resources */,
 				1375B2F121D6184D00744AF6 /* Friend_Off.png in Resources */,
 				1375B2CB21D5EA6400744AF6 /* ClanTab.png in Resources */,
@@ -955,14 +989,20 @@
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				132278D821D0B1610047B6B8 /* Pannel.png in Resources */,
 				1375B2C621D5E77A00744AF6 /* Crystal.png in Resources */,
+				132AADA421E2D53A00E81F50 /* Paper.png in Resources */,
+				132AADA021E2D53A00E81F50 /* TV.png in Resources */,
 				1375B2EB21D6142100744AF6 /* Clan_Off.png in Resources */,
 				132CB4B621D6398E00267FA4 /* Card_3.png in Resources */,
 				132CB4BA21D6398E00267FA4 /* Card_5.png in Resources */,
+				132AADA221E2D53A00E81F50 /* CrownBox.png in Resources */,
 				132CB4BC21D6398E00267FA4 /* Card_4.png in Resources */,
+				132AADAE21E2D53A00E81F50 /* 2v2.png in Resources */,
 				1356EAE921CA3E0600746E03 /* Neco_Main.jpeg in Resources */,
 				1375B2DF21D5FFA600744AF6 /* SocietyTab.png in Resources */,
 				1375B2F421D61D0C00744AF6 /* FriendTab.png in Resources */,
+				132AADA821E2D53A00E81F50 /* Battle.png in Resources */,
 				132EEA0E21DDFA55001CC64E /* ClanTab_Head.png in Resources */,
+				132AADA621E2D53A00E81F50 /* Quest.png in Resources */,
 				132CB4BE21D6398E00267FA4 /* Card_8.png in Resources */,
 				1399566621D5B7B6004DE14E /* EventItem_00.png in Resources */,
 				1375B2C421D5E77A00744AF6 /* Book.png in Resources */,
@@ -984,12 +1024,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				132CB4BD21D6398E00267FA4 /* Card_4.png in Resources */,
+				132AADA321E2D53A00E81F50 /* CrownBox.png in Resources */,
 				132CB4B921D6398E00267FA4 /* Card_1.png in Resources */,
 				1375B2C721D5E77A00744AF6 /* Crystal.png in Resources */,
 				132CB4B721D6398E00267FA4 /* Card_3.png in Resources */,
 				1375B2E921D6061800744AF6 /* Society_On.png in Resources */,
 				1375B2EF21D6184700744AF6 /* Society_Off.png in Resources */,
 				132CB49F21D6269F00267FA4 /* Dack.png in Resources */,
+				132AADA921E2D53A00E81F50 /* Battle.png in Resources */,
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
 				13323F3121D305E90062BA01 /* Profile_Mid.png in Resources */,
 				13285C2921CB5621005B8214 /* Neco_2.jpg in Resources */,
@@ -1002,10 +1044,14 @@
 				13285C2F21CB573F005B8214 /* Neco_4.jpg in Resources */,
 				1356EAEA21CA3E0600746E03 /* Neco_Main.jpeg in Resources */,
 				132CB4B321D6398E00267FA4 /* Card_6.png in Resources */,
+				132AADA721E2D53A00E81F50 /* Quest.png in Resources */,
 				132EEA0321DDADDC001CC64E /* Use.png in Resources */,
 				13323F4321D317750062BA01 /* ItemBox.png in Resources */,
+				132AADAF21E2D53A00E81F50 /* 2v2.png in Resources */,
 				13285C2C21CB573A005B8214 /* Neco_3.jpg in Resources */,
+				132AADA121E2D53A00E81F50 /* TV.png in Resources */,
 				132CB4B521D6398E00267FA4 /* Card_9.png in Resources */,
+				132AADAB21E2D53A00E81F50 /* Trophy.png in Resources */,
 				132CB4BF21D6398E00267FA4 /* Card_8.png in Resources */,
 				1375B2F521D61D0C00744AF6 /* FriendTab.png in Resources */,
 				1375B2CC21D5EA6400744AF6 /* ClanTab.png in Resources */,
@@ -1028,7 +1074,9 @@
 				1399566721D5B7B6004DE14E /* EventItem_00.png in Resources */,
 				132EEA0021DDAAAE001CC64E /* Card_Use.png in Resources */,
 				13323F3721D306470062BA01 /* Profile_Setting.png in Resources */,
+				132AADA521E2D53A00E81F50 /* Paper.png in Resources */,
 				132278D921D0B1610047B6B8 /* Pannel.png in Resources */,
+				132AADAD21E2D53A00E81F50 /* Earth.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

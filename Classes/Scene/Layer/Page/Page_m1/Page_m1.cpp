@@ -11,9 +11,10 @@
 #include "Layer_Select.hpp"
 
 CPage_m1::CPage_m1()
-    :m_pBattleDack(nullptr)
-    , m_vMouseDiff(Vec2::ZERO)
-    , m_bMove(false)
+:m_pBattleDack(nullptr)
+, m_vMouseDiff(Vec2::ZERO)
+, m_bMove(false)
+, m_bUseCard(false)
 {
     m_bVerticalMove = true;
 }
@@ -77,6 +78,7 @@ CPage_m1* CPage_m1::create(const char* _ImageName, CLayer_Main* _MainLayer)
 
 void CPage_m1::mouseTouch(Event *_event)
 {
+    m_bUseCard = false;
     m_pBattleDack->stopAllActions();
     m_pBattleDack->mouseTouch(_event);
     m_bMove = false;
@@ -91,13 +93,16 @@ void CPage_m1::VerticalMove(const Vec2& _vDiff)
 
 void CPage_m1::VerticalMoveUp()
 {
-    m_pBattleDack->stopAllActions();
+//    m_pBattleDack->stopAllActions();
+    if(m_bUseCard)
+        return;
+    
     const Vec2& vPos = m_pBattleDack->getPosition();
     const Vec2& vVisibleSize = Director::getInstance()->getVisibleSize();
     ActionInterval* action = nullptr;
     
     if(vPos.y < 0)
-    {
+    { 
         action = EaseOut::create(MoveTo::create(0.7f, Vec2( vPos.x, 0)), 7);
     }
     

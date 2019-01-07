@@ -47,14 +47,48 @@ bool CPage_0::init(const char* _ImageName, CLayer_Main* _MainLayer)
     setting->setContentSize(Size(vVisible.x * 0.1, vVisible.x * 0.1));
     setting->setPosition(vPos);
     
+    vPos.x = vVisible.x * 0.25;
+    vPos.y = vVisible.y * 0.83;
+    
+    auto quest = CItemBox::create("Quest.png");
+    quest->setContentSize(Size(vVisible.x * 0.45, vVisible.y * 0.1));
+    quest->setPosition(vPos);
+    
+    vPos = quest->getPosition();
+    vPos.x += vVisible.x * 0.45 + 20;
+    
+    auto crownBox = CItemBox::create("CrownBox.png");
+    crownBox->setContentSize(Size(vVisible.x * 0.45, vVisible.y * 0.1));
+    crownBox->setPosition(vPos);
+    
+    vPos.x = vVisible.x * 0.3;
+    vPos.y = vVisible.y * 0.3;
+    
+    auto battle = CItemBox::create("Battle.png");
+    battle->setContentSize(Size(vVisible.x * 0.3, vVisible.y * 0.1));
+    battle->setPosition(vPos);
+    
+    vPos.x += vVisible.x * 0.3 + 20;
+    
+    auto twobytwo = CItemBox::create("2v2.png");
+    twobytwo->setContentSize(Size(vVisible.x * 0.3, vVisible.y * 0.1));
+    twobytwo->setPosition(vPos);
     
     this->addChild(pIcon);
     this->addChild(profileMid);
     this->addChild(setting);
+    this->addChild(quest);
+    this->addChild(crownBox);
+    this->addChild(battle);
+    this->addChild(twobytwo);
     
     m_vecItem.pushBack(pIcon);
     m_vecItem.pushBack(profileMid);
     m_vecItem.pushBack(setting);
+    m_vecItem.pushBack(quest);
+    m_vecItem.pushBack(crownBox);
+    m_vecItem.pushBack(battle);
+    m_vecItem.pushBack(twobytwo);
     
     return true;
 }

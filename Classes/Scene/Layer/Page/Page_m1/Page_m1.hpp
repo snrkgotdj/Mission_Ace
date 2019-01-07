@@ -21,9 +21,14 @@ private:
     CBattleDack* m_pBattleDack;
     Vec2 m_vMouseDiff;
     bool m_bMove;
+    bool m_bUseCard;
     
 private:
     void update(float delta) override;
+    
+public:
+    void setMove(bool _bMove){m_bMove = _bMove;}
+    void setUseCard(bool _bUse){m_bUseCard = _bUse; m_bMove = _bUse;};
     
 public:
     virtual void mouseTouch(Event* _event) override;

@@ -266,6 +266,7 @@ void CCard::OnMouseTouch(Event *_event)
     CDack* pDack = m_pBattleDack->getDack();
     Vec2 vMousePos = Vec2(pMouse->getCursorX(), pMouse->getCursorY());
     m_vBeforePos = vMousePos;
+    m_bMove = false;
     
     if(pDack->isMouseOn(_event))
     {
@@ -299,6 +300,7 @@ void CCard::OnMouseMove(Event *_event)
     
     m_pCardSel->setPosition(vMove);
     m_vBeforePos = vMousePos;
+    m_bMove = true;
 }
 
 void CCard::OnMouseUp(Event *_event)
@@ -317,10 +319,9 @@ void CCard::OnMouseUp(Event *_event)
             // 덱과 카드교체
             m_pBattleDack->enableCard(pDack->getSelCard());
             pDack->changeCard(m_pCardSel);
-            m_pCardSel = nullptr;
             m_pBattleDack->renewCardPos();
             _eventDispatcher->removeEventListenersForTarget(this);
-            ((CSelectScene*)m_pBattleDack->getPage()->getMainLayer()->getScene())->setTouchNext(true);
+            ((CSelectScene*)m_pBattleDack->getPage()->getMainLayer()->getScene())->setTouch(true);
         }
         else
         {
@@ -330,7 +331,17 @@ void CCard::OnMouseUp(Event *_event)
     }
     else
     {
-        if(true == pDack->isMouseOnSecond(vMousePos))
+        if(!m_bMove)
+        {
+            // 덱과 카드교체
+            m_pBattleDack->enableCard(pDack->getSelCard());
+            pDack->changeCard(this);
+            m_pBattleDack->renewCardPos();
+            _eventDispatcher->removeEventListenersForTarget(this);
+            ((CSelectScene*)m_pBattleDack->getPage()->getMainLayer()->getScene())->setTouch(true);
+        }
+        
+        else if(true == pDack->isMouseOnSecond(vMousePos))
         {
             pDack->changeCard();
         }
@@ -342,11 +353,17 @@ void CCard::OnMouseUp(Event *_event)
     m_pCardSel = nullptr;
 }
 
-void CCard::returnCard()
+void CCard::returnCard(bool _bNext)
 {
     m_pCardSel = nullptr;
     m_pBattleDack->renewCardPos();
     m_pBattleDack->enableCard();
     _eventDispatcher->removeEventListenersForTarget(this);
-    ((CSelectScene*)m_pBattleDack->getPage()->getMainLayer()->getScene())->setTouchNext(true);
+    
+    if(_bNext)
+        ((CSelectScene*)m_pBattleDack->getPage()->getMainLayer()->getScene())->setTouchNext(true);
+    
+    else
+        ((CSelectScene*)m_pBattleDack->getPage()->getMainLayer()->getScene())->setTouch(true);
+    
 }
